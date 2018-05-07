@@ -10,16 +10,6 @@ import UIKit
 
 public class PQAlertController: UIAlertController {
     
-    public convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .alert){
-        self.init(title: title, message: message, preferredStyle: preferredStyle)
-        
-        if preferredStyle == .actionSheet, let popPresenter = popoverPresentationController {
-            popPresenter.sourceView = UIApplication.shared.keyWindow?.rootViewController?.view
-            let bounds = UIScreen.main.bounds
-            popPresenter.sourceRect = CGRect(x: bounds.width * 0.5, y: bounds.height, width: 1.0, height: 1.0)
-        }
-    }
-    
     public typealias PQActionBlock = ((_ action: UIAlertAction,_ alert: PQAlertController) -> Void)
     public typealias PQTextFieldBlock = ((_ action: UITextField,_ alert: PQAlertController) -> Void)
     @discardableResult public  func addButton(_ title: String?, style: UIAlertActionStyle = .default, handler: PQActionBlock?) -> PQAlertController{
@@ -70,6 +60,18 @@ extension PQAlertController{
         let key = getTextFieldKey(textfield.tag)
         if let block: PQTextFieldBlock = textFieldsBlock[key] {
             block(textfield,self)
+        }
+    }
+}
+
+public extension PQAlertController{
+    public convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .alert){
+        self.init(title: title, message: message, preferredStyle: preferredStyle)
+        
+        if preferredStyle == .actionSheet, let popPresenter = popoverPresentationController {
+            popPresenter.sourceView = UIApplication.shared.keyWindow?.rootViewController?.view
+            let bounds = UIScreen.main.bounds
+            popPresenter.sourceRect = CGRect(x: bounds.width * 0.5, y: bounds.height, width: 1.0, height: 1.0)
         }
     }
 }

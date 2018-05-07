@@ -15,9 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print("dd".pq.tempDir())
+        PQHUD.defaultSetHUD(nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        PQHUD.share.showError("error").dismiss(2)
     }
 }
 

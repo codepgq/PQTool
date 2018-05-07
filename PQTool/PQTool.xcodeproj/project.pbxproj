@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60F5BE7420A03EB1008D00EB /* PQHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7320A03EB1008D00EB /* PQHUD.swift */; };
+		60F5BE7E20A03ECD008D00EB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */; };
+		60F5BE7F20A03ECD008D00EB /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F5BE8020A03ECD008D00EB /* SVProgressHUD-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7720A03ECB008D00EB /* SVProgressHUD-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F5BE8120A03ECD008D00EB /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7820A03ECC008D00EB /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F5BE8220A03ECD008D00EB /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7920A03ECC008D00EB /* SVRadialGradientLayer.m */; };
+		60F5BE8320A03ECD008D00EB /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7A20A03ECC008D00EB /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F5BE8420A03ECD008D00EB /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7B20A03ECC008D00EB /* SVIndefiniteAnimatedView.m */; };
+		60F5BE8520A03ECD008D00EB /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7C20A03ECC008D00EB /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F5BE8620A03ECD008D00EB /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7D20A03ECD008D00EB /* SVProgressAnimatedView.m */; };
+		60F5BE8820A040C8008D00EB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60F5BE8720A040C7008D00EB /* SVProgressHUD.bundle */; };
 		8F7D4F19209FF6960010190B /* PQTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F17209FF6960010190B /* PQTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F7D4F38209FF8340010190B /* PQTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F35209FF8330010190B /* PQTextField.swift */; };
 		8F7D4F39209FF8340010190B /* PQAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F36209FF8330010190B /* PQAlertController.swift */; };
@@ -63,6 +74,17 @@
 
 /* Begin PBXFileReference section */
 		60F5BDAF20A01F85008D00EB /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		60F5BE7320A03EB1008D00EB /* PQHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQHUD.swift; sourceTree = "<group>"; };
+		60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		60F5BE7720A03ECB008D00EB /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		60F5BE7820A03ECC008D00EB /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		60F5BE7920A03ECC008D00EB /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		60F5BE7A20A03ECC008D00EB /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		60F5BE7B20A03ECC008D00EB /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		60F5BE7C20A03ECC008D00EB /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		60F5BE7D20A03ECD008D00EB /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		60F5BE8720A040C7008D00EB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		8F7D4F14209FF6960010190B /* PQTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PQTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7D4F17209FF6960010190B /* PQTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PQTool.h; sourceTree = "<group>"; };
 		8F7D4F18209FF6960010190B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +146,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		60F5BE3920A03799008D00EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F7D4F36209FF8330010190B /* PQAlertController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60F5BE8920A0411C008D00EB /* SVP */ = {
+			isa = PBXGroup;
+			children = (
+				60F5BE8720A040C7008D00EB /* SVProgressHUD.bundle */,
+				60F5BE7C20A03ECC008D00EB /* SVIndefiniteAnimatedView.h */,
+				60F5BE7B20A03ECC008D00EB /* SVIndefiniteAnimatedView.m */,
+				60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */,
+				60F5BE7D20A03ECD008D00EB /* SVProgressAnimatedView.m */,
+				60F5BE7720A03ECB008D00EB /* SVProgressHUD-Prefix.pch */,
+				60F5BE7820A03ECC008D00EB /* SVProgressHUD.h */,
+				60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */,
+				60F5BE7A20A03ECC008D00EB /* SVRadialGradientLayer.h */,
+				60F5BE7920A03ECC008D00EB /* SVRadialGradientLayer.m */,
+			);
+			name = SVP;
+			sourceTree = "<group>";
+		};
 		8F7D4F0A209FF6950010190B = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +195,8 @@
 		8F7D4F16209FF6960010190B /* PQTool */ = {
 			isa = PBXGroup;
 			children = (
+				60F5BE8920A0411C008D00EB /* SVP */,
+				60F5BE3920A03799008D00EB /* Controller */,
 				8F7D4F3B209FF83B0010190B /* Extensions */,
 				8F7D4F34209FF8230010190B /* View */,
 				8F7D4F17209FF6960010190B /* PQTool.h */,
@@ -159,7 +208,6 @@
 		8F7D4F34209FF8230010190B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8F7D4F36209FF8330010190B /* PQAlertController.swift */,
 				8F7D4F37209FF8340010190B /* PQButton.swift */,
 				8F7D4F35209FF8330010190B /* PQTextField.swift */,
 			);
@@ -169,6 +217,7 @@
 		8F7D4F3B209FF83B0010190B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				60F5BE7320A03EB1008D00EB /* PQHUD.swift */,
 				8F7D4F45209FF8460010190B /* Extensions.swift */,
 				8F7D4F40209FF8460010190B /* PQColor.swift */,
 				8F7D4F3E209FF8460010190B /* PQData.swift */,
@@ -211,7 +260,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F5BE8120A03ECD008D00EB /* SVProgressHUD.h in Headers */,
+				60F5BE7F20A03ECD008D00EB /* SVProgressAnimatedView.h in Headers */,
+				60F5BE8020A03ECD008D00EB /* SVProgressHUD-Prefix.pch in Headers */,
 				8F7D4F19209FF6960010190B /* PQTool.h in Headers */,
+				60F5BE8520A03ECD008D00EB /* SVIndefiniteAnimatedView.h in Headers */,
+				60F5BE8320A03ECD008D00EB /* SVRadialGradientLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F5BE8820A040C8008D00EB /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +409,16 @@
 				8F7D4F4D209FF8460010190B /* PQGCD.swift in Sources */,
 				8F7D4F4A209FF8460010190B /* PQColor.swift in Sources */,
 				8F7D4F4C209FF8460010190B /* PQNavgationItem.swift in Sources */,
+				60F5BE7E20A03ECD008D00EB /* SVProgressHUD.m in Sources */,
+				60F5BE8220A03ECD008D00EB /* SVRadialGradientLayer.m in Sources */,
 				8F7D4F3A209FF8340010190B /* PQButton.swift in Sources */,
 				8F7D4F47209FF8460010190B /* PQString.swift in Sources */,
 				8F7D4F48209FF8460010190B /* PQData.swift in Sources */,
 				8F7D4F38209FF8340010190B /* PQTextField.swift in Sources */,
+				60F5BE8620A03ECD008D00EB /* SVProgressAnimatedView.m in Sources */,
 				8F7D4F4E209FF8460010190B /* PQImage.swift in Sources */,
+				60F5BE7420A03EB1008D00EB /* PQHUD.swift in Sources */,
+				60F5BE8420A03ECD008D00EB /* SVIndefiniteAnimatedView.m in Sources */,
 				8F7D4F46209FF8460010190B /* PQDate.swift in Sources */,
 				8F7D4F4F209FF8460010190B /* Extensions.swift in Sources */,
 				8F7D4F4B209FF8460010190B /* PQPublicFunction.swift in Sources */,
