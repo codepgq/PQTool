@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         PQHUD.share.showError("error").dismiss(2)
+        
+        PQAlertController(title: "ddd", message: "ddd").addButton("d") { (action, alert) in
+            
+        }
     }
 }
 
