@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        PQHUD.share.show("啊哈哈哈").dismiss(3)
     }
 }
 

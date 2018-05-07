@@ -14,23 +14,12 @@
 		8F7D4F46209FF8460010190B /* PQDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F3C209FF8460010190B /* PQDate.swift */; };
 		8F7D4F47209FF8460010190B /* PQString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F3D209FF8460010190B /* PQString.swift */; };
 		8F7D4F48209FF8460010190B /* PQData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F3E209FF8460010190B /* PQData.swift */; };
-		8F7D4F49209FF8460010190B /* PQHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F3F209FF8460010190B /* PQHUD.swift */; };
 		8F7D4F4A209FF8460010190B /* PQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F40209FF8460010190B /* PQColor.swift */; };
 		8F7D4F4B209FF8460010190B /* PQPublicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F41209FF8460010190B /* PQPublicFunction.swift */; };
 		8F7D4F4C209FF8460010190B /* PQNavgationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F42209FF8460010190B /* PQNavgationItem.swift */; };
 		8F7D4F4D209FF8460010190B /* PQGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F43209FF8460010190B /* PQGCD.swift */; };
 		8F7D4F4E209FF8460010190B /* PQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F44209FF8460010190B /* PQImage.swift */; };
 		8F7D4F4F209FF8460010190B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F45209FF8460010190B /* Extensions.swift */; };
-		8F7D4F64209FFA9C0010190B /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F5A209FFA9C0010190B /* SVIndefiniteAnimatedView.h */; };
-		8F7D4F65209FFA9C0010190B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F5B209FFA9C0010190B /* SVIndefiniteAnimatedView.m */; };
-		8F7D4F66209FFA9C0010190B /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F5C209FFA9C0010190B /* SVProgressAnimatedView.h */; };
-		8F7D4F67209FFA9C0010190B /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F5D209FFA9C0010190B /* SVProgressAnimatedView.m */; };
-		8F7D4F68209FFA9C0010190B /* SVProgressHUD-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F5E209FFA9C0010190B /* SVProgressHUD-Prefix.pch */; };
-		8F7D4F69209FFA9C0010190B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F7D4F5F209FFA9C0010190B /* SVProgressHUD.bundle */; };
-		8F7D4F6A209FFA9C0010190B /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F60209FFA9C0010190B /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F7D4F6B209FFA9C0010190B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F61209FFA9C0010190B /* SVProgressHUD.m */; };
-		8F7D4F6C209FFA9C0010190B /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F62209FFA9C0010190B /* SVRadialGradientLayer.h */; };
-		8F7D4F6D209FFA9C0010190B /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F63209FFA9C0010190B /* SVRadialGradientLayer.m */; };
 		8F7D4F75209FFB360010190B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F74209FFB360010190B /* AppDelegate.swift */; };
 		8F7D4F77209FFB360010190B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F76209FFB360010190B /* ViewController.swift */; };
 		8F7D4F7A209FFB360010190B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7D4F78209FFB360010190B /* Main.storyboard */; };
@@ -73,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		60F5BDAF20A01F85008D00EB /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		8F7D4F14209FF6960010190B /* PQTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PQTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7D4F17209FF6960010190B /* PQTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PQTool.h; sourceTree = "<group>"; };
 		8F7D4F18209FF6960010190B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,24 +72,12 @@
 		8F7D4F3C209FF8460010190B /* PQDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQDate.swift; sourceTree = "<group>"; };
 		8F7D4F3D209FF8460010190B /* PQString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQString.swift; sourceTree = "<group>"; };
 		8F7D4F3E209FF8460010190B /* PQData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQData.swift; sourceTree = "<group>"; };
-		8F7D4F3F209FF8460010190B /* PQHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQHUD.swift; sourceTree = "<group>"; };
 		8F7D4F40209FF8460010190B /* PQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQColor.swift; sourceTree = "<group>"; };
 		8F7D4F41209FF8460010190B /* PQPublicFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQPublicFunction.swift; sourceTree = "<group>"; };
 		8F7D4F42209FF8460010190B /* PQNavgationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQNavgationItem.swift; sourceTree = "<group>"; };
 		8F7D4F43209FF8460010190B /* PQGCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQGCD.swift; sourceTree = "<group>"; };
 		8F7D4F44209FF8460010190B /* PQImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQImage.swift; sourceTree = "<group>"; };
 		8F7D4F45209FF8460010190B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8F7D4F58209FF8C50010190B /* PQTool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PQTool-Bridging-Header.h"; sourceTree = "<group>"; };
-		8F7D4F5A209FFA9C0010190B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		8F7D4F5B209FFA9C0010190B /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		8F7D4F5C209FFA9C0010190B /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
-		8F7D4F5D209FFA9C0010190B /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		8F7D4F5E209FFA9C0010190B /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		8F7D4F5F209FFA9C0010190B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		8F7D4F60209FFA9C0010190B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		8F7D4F61209FFA9C0010190B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		8F7D4F62209FFA9C0010190B /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		8F7D4F63209FFA9C0010190B /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		8F7D4F72209FFB360010190B /* TestPQTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPQTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7D4F74209FFB360010190B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7D4F76209FFB360010190B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60F5BDAE20A01F84008D00EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60F5BDAF20A01F85008D00EB /* SVProgressHUD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F7D4F0A209FF6950010190B = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +131,7 @@
 				8F7D4F73209FFB360010190B /* TestPQTool */,
 				8F7D4F88209FFB360010190B /* TestPQToolUITests */,
 				8F7D4F15209FF6960010190B /* Products */,
+				60F5BDAE20A01F84008D00EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,12 +148,10 @@
 		8F7D4F16209FF6960010190B /* PQTool */ = {
 			isa = PBXGroup;
 			children = (
-				8F7D4F59209FFA9C0010190B /* SVProgressHUD */,
 				8F7D4F3B209FF83B0010190B /* Extensions */,
 				8F7D4F34209FF8230010190B /* View */,
 				8F7D4F17209FF6960010190B /* PQTool.h */,
 				8F7D4F18209FF6960010190B /* Info.plist */,
-				8F7D4F58209FF8C50010190B /* PQTool-Bridging-Header.h */,
 			);
 			path = PQTool;
 			sourceTree = "<group>";
@@ -189,30 +174,12 @@
 				8F7D4F3E209FF8460010190B /* PQData.swift */,
 				8F7D4F3C209FF8460010190B /* PQDate.swift */,
 				8F7D4F43209FF8460010190B /* PQGCD.swift */,
-				8F7D4F3F209FF8460010190B /* PQHUD.swift */,
 				8F7D4F44209FF8460010190B /* PQImage.swift */,
 				8F7D4F42209FF8460010190B /* PQNavgationItem.swift */,
 				8F7D4F41209FF8460010190B /* PQPublicFunction.swift */,
 				8F7D4F3D209FF8460010190B /* PQString.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8F7D4F59209FFA9C0010190B /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				8F7D4F5A209FFA9C0010190B /* SVIndefiniteAnimatedView.h */,
-				8F7D4F5B209FFA9C0010190B /* SVIndefiniteAnimatedView.m */,
-				8F7D4F5C209FFA9C0010190B /* SVProgressAnimatedView.h */,
-				8F7D4F5D209FFA9C0010190B /* SVProgressAnimatedView.m */,
-				8F7D4F5E209FFA9C0010190B /* SVProgressHUD-Prefix.pch */,
-				8F7D4F5F209FFA9C0010190B /* SVProgressHUD.bundle */,
-				8F7D4F60209FFA9C0010190B /* SVProgressHUD.h */,
-				8F7D4F61209FFA9C0010190B /* SVProgressHUD.m */,
-				8F7D4F62209FFA9C0010190B /* SVRadialGradientLayer.h */,
-				8F7D4F63209FFA9C0010190B /* SVRadialGradientLayer.m */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		8F7D4F73209FFB360010190B /* TestPQTool */ = {
@@ -244,12 +211,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7D4F64209FFA9C0010190B /* SVIndefiniteAnimatedView.h in Headers */,
-				8F7D4F6A209FFA9C0010190B /* SVProgressHUD.h in Headers */,
-				8F7D4F66209FFA9C0010190B /* SVProgressAnimatedView.h in Headers */,
 				8F7D4F19209FF6960010190B /* PQTool.h in Headers */,
-				8F7D4F6C209FFA9C0010190B /* SVRadialGradientLayer.h in Headers */,
-				8F7D4F68209FFA9C0010190B /* SVProgressHUD-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,12 +280,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = pgq;
 				TargetAttributes = {
 					8F7D4F13209FF6960010190B = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					8F7D4F71209FFB360010190B = {
@@ -362,7 +324,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7D4F69209FFA9C0010190B /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,15 +356,10 @@
 				8F7D4F4C209FF8460010190B /* PQNavgationItem.swift in Sources */,
 				8F7D4F3A209FF8340010190B /* PQButton.swift in Sources */,
 				8F7D4F47209FF8460010190B /* PQString.swift in Sources */,
-				8F7D4F65209FFA9C0010190B /* SVIndefiniteAnimatedView.m in Sources */,
 				8F7D4F48209FF8460010190B /* PQData.swift in Sources */,
 				8F7D4F38209FF8340010190B /* PQTextField.swift in Sources */,
-				8F7D4F49209FF8460010190B /* PQHUD.swift in Sources */,
-				8F7D4F6B209FFA9C0010190B /* SVProgressHUD.m in Sources */,
 				8F7D4F4E209FF8460010190B /* PQImage.swift in Sources */,
 				8F7D4F46209FF8460010190B /* PQDate.swift in Sources */,
-				8F7D4F6D209FFA9C0010190B /* SVRadialGradientLayer.m in Sources */,
-				8F7D4F67209FFA9C0010190B /* SVProgressAnimatedView.m in Sources */,
 				8F7D4F4F209FF8460010190B /* Extensions.swift in Sources */,
 				8F7D4F4B209FF8460010190B /* PQPublicFunction.swift in Sources */,
 				8F7D4F39209FF8340010190B /* PQAlertController.swift in Sources */,
@@ -476,6 +432,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -483,6 +440,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -536,6 +494,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -543,6 +502,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -586,10 +546,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/PQTool",
+				);
 				INFOPLIST_FILE = PQTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pgq.PQTool;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -611,10 +576,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/PQTool",
+				);
 				INFOPLIST_FILE = PQTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pgq.PQTool;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
