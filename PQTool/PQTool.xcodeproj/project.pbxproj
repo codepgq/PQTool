@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60F5BE7420A03EB1008D00EB /* PQHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7320A03EB1008D00EB /* PQHUD.swift */; };
 		60F5BE7E20A03ECD008D00EB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */; };
 		60F5BE7F20A03ECD008D00EB /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60F5BE8020A03ECD008D00EB /* SVProgressHUD-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7720A03ECB008D00EB /* SVProgressHUD-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,6 +17,7 @@
 		60F5BE8520A03ECD008D00EB /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7C20A03ECC008D00EB /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60F5BE8620A03ECD008D00EB /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7D20A03ECD008D00EB /* SVProgressAnimatedView.m */; };
 		60F5BE8820A040C8008D00EB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60F5BE8720A040C7008D00EB /* SVProgressHUD.bundle */; };
+		60F5BE9120A0499F008D00EB /* PQHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE9020A0499F008D00EB /* PQHUD.swift */; };
 		8F7D4F19209FF6960010190B /* PQTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7D4F17209FF6960010190B /* PQTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F7D4F38209FF8340010190B /* PQTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F35209FF8330010190B /* PQTextField.swift */; };
 		8F7D4F39209FF8340010190B /* PQAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7D4F36209FF8330010190B /* PQAlertController.swift */; };
@@ -74,7 +74,6 @@
 
 /* Begin PBXFileReference section */
 		60F5BDAF20A01F85008D00EB /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		60F5BE7320A03EB1008D00EB /* PQHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQHUD.swift; sourceTree = "<group>"; };
 		60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		60F5BE7720A03ECB008D00EB /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		60F5BE7C20A03ECC008D00EB /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		60F5BE7D20A03ECD008D00EB /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		60F5BE8720A040C7008D00EB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		60F5BE9020A0499F008D00EB /* PQHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQHUD.swift; sourceTree = "<group>"; };
 		8F7D4F14209FF6960010190B /* PQTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PQTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7D4F17209FF6960010190B /* PQTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PQTool.h; sourceTree = "<group>"; };
 		8F7D4F18209FF6960010190B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		8F7D4F3B209FF83B0010190B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				60F5BE7320A03EB1008D00EB /* PQHUD.swift */,
+				60F5BE9020A0499F008D00EB /* PQHUD.swift */,
 				8F7D4F45209FF8460010190B /* Extensions.swift */,
 				8F7D4F40209FF8460010190B /* PQColor.swift */,
 				8F7D4F3E209FF8460010190B /* PQData.swift */,
@@ -406,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F5BE9120A0499F008D00EB /* PQHUD.swift in Sources */,
 				8F7D4F4D209FF8460010190B /* PQGCD.swift in Sources */,
 				8F7D4F4A209FF8460010190B /* PQColor.swift in Sources */,
 				8F7D4F4C209FF8460010190B /* PQNavgationItem.swift in Sources */,
@@ -417,7 +418,6 @@
 				8F7D4F38209FF8340010190B /* PQTextField.swift in Sources */,
 				60F5BE8620A03ECD008D00EB /* SVProgressAnimatedView.m in Sources */,
 				8F7D4F4E209FF8460010190B /* PQImage.swift in Sources */,
-				60F5BE7420A03EB1008D00EB /* PQHUD.swift in Sources */,
 				60F5BE8420A03ECD008D00EB /* SVIndefiniteAnimatedView.m in Sources */,
 				8F7D4F46209FF8460010190B /* PQDate.swift in Sources */,
 				8F7D4F4F209FF8460010190B /* Extensions.swift in Sources */,
