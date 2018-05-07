@@ -10,7 +10,7 @@ import UIKit
 
 public class PQAlertController: UIAlertController {
     
-    convenience init(_ title: String?, _ message: String?, preferredStyle: UIAlertControllerStyle = .alert){
+    public convenience init(_ title: String?, _ message: String?, preferredStyle: UIAlertControllerStyle = .alert){
         self.init(title: title, message: message, preferredStyle: preferredStyle)
         
         if preferredStyle == .actionSheet, let popPresenter = popoverPresentationController {
