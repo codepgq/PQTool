@@ -81,22 +81,27 @@ public func pqLog<T>(message : T, file : String = #file, lineNumber : Int = #lin
 ///
 /// - Parameter str: 字符串
 /// - Returns: 字符串
-public func LocalString(_ str : String) -> String{
-    return NSLocalizedString(str, comment: str)
+extension String{
+    func localized() -> String{
+        return NSLocalizedString(self, comment: self)
+    }
 }
 
+// 锁
 public func synchronized(lock: AnyObject, closure:()->()) {
     objc_sync_enter(lock)
     closure()
     objc_sync_exit(lock)
 }
 
+//关闭定时器
 public func closeTimer(_ timer:inout Timer?){
     timer?.invalidate()
     timer?.fireDate = Date.distantFuture
     timer = nil
 }
 
+// 创建定时器
 public func openTimer(timeInterval: TimeInterval, target: Any, selector: Selector, repeats: Bool) -> Timer {
     let timer = Timer.scheduledTimer(timeInterval: timeInterval, target: target, selector: selector, userInfo: nil, repeats: repeats)
     RunLoop.current.add(timer, forMode: .commonModes)
@@ -107,5 +112,4 @@ public func openTimer(timeInterval: TimeInterval, target: Any, selector: Selecto
 
 
 // MARK: block
-
 public typealias callbackFloat = (_ value: Float) -> ()
