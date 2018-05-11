@@ -78,6 +78,34 @@ public extension PQStringEncodable where WrapperType == String {
         return info["CFBundleShortVersionString"] as? String
     }
     
+    
+    
+    /// 正则
+    ///
+    /// - Parameters:
+    ///   - partten: 条件
+    ///   - regexOptions: 模式
+    ///   - match: 模式
+    /// - Returns: bool
+    func regex(partten: String, regexOptions: NSRegularExpression.Options = .caseInsensitive, match: NSRegularExpression.MatchingOptions = .reportProgress) -> Bool{
+        do {
+            //2、创建正则表达式
+            let regex = try NSRegularExpression(pattern: partten, options: NSRegularExpression.Options.caseInsensitive)
+            
+            //3、匹配
+            let range = regex.rangeOfFirstMatch(in: pq, options: NSRegularExpression.MatchingOptions(rawValue : 0), range: NSRange(location: 0, length: pq.count))
+            
+            if range.location == 0 && range.length >= 1 {
+                return true
+            }
+            
+        } catch{
+            print(error)
+        }
+        
+        return false
+    }
+    
     func isEmail() -> Bool {
         do {
             //1、创建规则
