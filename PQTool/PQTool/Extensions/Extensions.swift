@@ -113,6 +113,10 @@ public extension UIViewController {
         return UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier!)
     }
     
+    class func loadXIB() -> UIViewController?{
+        return UIViewController(nibName: NSStringFromClass(self), bundle: nil)
+    }
+    
     func navTintColor(_ tintColor: UIColor = .white, barTintColor: UIColor = .white, textColor: UIColor = .white){
         self.navigationController?.navigationBar.tintColor = tintColor
         self.navigationController?.navigationBar.barTintColor = .white
