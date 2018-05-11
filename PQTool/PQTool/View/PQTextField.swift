@@ -19,6 +19,13 @@ public class PQTextField: UITextField {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         delegate = self
+        self.setValue(self.placeholderColor, forKey: "placeholderColor")
+    }
+    
+    public override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        if key == "placeholderColor"{
+            self.placeholderColor = value as? UIColor
+        }
     }
     
     public func textfiledClickReturn(_ block : ((_ textfield : PQTextField)->Void)?){
