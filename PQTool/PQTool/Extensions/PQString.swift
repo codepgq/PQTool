@@ -14,6 +14,11 @@ public protocol PQStringEncodable {
 }
 
 public extension PQStringEncodable where WrapperType == String {
+    
+    func localized() -> String{
+        return NSLocalizedString(pq, comment: pq)
+    }
+    
     func controller() -> UIViewController? {
         /*
          动态创建类，需要用到namesapce，命名空间，也就是前缀

@@ -105,6 +105,14 @@ public extension UIStackView{
 
 // MARK: UIViewController
 public extension UIViewController {
+    
+    class func loadSB(storyboard: String, identifier: String?) -> UIViewController?{
+        if identifier == nil {
+            return UIStoryboard(name: storyboard, bundle: nil).instantiateInitialViewController()
+        }
+        return UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier!)
+    }
+    
     func navTintColor(_ tintColor: UIColor = .white, barTintColor: UIColor = .white, textColor: UIColor = .white){
         self.navigationController?.navigationBar.tintColor = tintColor
         self.navigationController?.navigationBar.barTintColor = .white
