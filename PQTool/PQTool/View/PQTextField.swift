@@ -20,11 +20,16 @@ public class PQTextField: UITextField {
         super.init(coder: aDecoder)
         delegate = self
         self.setValue(self.placeholderColor, forKey: "placeholderColor")
+        self.setValue(self.leftMargin, forKey: "leftMargin")
     }
     
     public override func setValue(_ value: Any?, forUndefinedKey key: String) {
         if key == "placeholderColor"{
             self.placeholderColor = value as? UIColor
+        }
+        
+        if key == "leftMargin" {
+            self.leftMargin = value as! CGFloat
         }
     }
     
@@ -55,15 +60,15 @@ public class PQTextField: UITextField {
             self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? " ", attributes: [.foregroundColor:placeholderColor ?? .black])
         }
     }
-    public var leftMagin : CGFloat = 10 {
+    public var leftMargin : CGFloat = 10 {
         didSet{
-            self.pq_leftView.frame.size.width = leftMagin
+            self.pq_leftView.frame.size.width = leftMargin
         }
     }
     
     private lazy var pq_leftView: UIView = {
          let view = UIView(frame: self.bounds)
-        view.frame.size.width = self.leftMagin
+        view.frame.size.width = self.leftMargin
         self.leftView = view
         self.leftViewMode = .always
         return view
@@ -80,7 +85,7 @@ public extension PQTextField {
         self.placeholder = placeholder
         self.placeholderColor = placeholderColor
         self.textColor = textColor
-        self.leftMagin = leftMargin
+        self.leftMargin = leftMargin
     }
 }
 
