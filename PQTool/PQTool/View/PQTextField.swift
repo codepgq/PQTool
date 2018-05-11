@@ -10,7 +10,6 @@ import UIKit
 
 public class PQTextField: UITextField {
     
-    var maxCount: Int = -1
     override init(frame: CGRect){
         super.init(frame: frame)
         delegate = self
@@ -54,6 +53,7 @@ public class PQTextField: UITextField {
     }
     
     // MARK: 属性
+    public var maxCount: Int = -1
     public var placeholderColor: UIColor? = UIColor.black
     {
         didSet{
