@@ -18,6 +18,13 @@ class ViewController: UIViewController {
         PQHUD.defaultSetHUD(nil)
     }
     
+    @IBOutlet weak var textTF: PQTextField!{
+        didSet{
+            textTF.textfiledTextChange { (tf) in
+                print(tf.text)
+            }
+        }
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         PQHUD.share.showError("error").dismiss(2)
     }

@@ -9,16 +9,16 @@
 import UIKit
 
 public class PQTextField: UITextField {
-
+    
     var maxCount: Int = -1
     override init(frame: CGRect){
         super.init(frame: frame)
-        
         delegate = self
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        delegate = self
     }
     
     public func textfiledClickReturn(_ block : ((_ textfield : PQTextField)->Void)?){
@@ -31,7 +31,7 @@ public class PQTextField: UITextField {
         endBlock = block
     }
     public func textfiledTextChange(_ block : ((_ textfield : PQTextField)->Void)?){
-        addTarget(self, action: #selector(textValueChange(_:)), for: .valueChanged)
+        addTarget(self, action: #selector(textValueChange(_:)), for: .editingChanged)
         changeBlock = block
     }
     
@@ -42,13 +42,13 @@ public class PQTextField: UITextField {
     }
     
     // MARK: 属性
-    var placeholderColor: UIColor? = UIColor.black
+    public var placeholderColor: UIColor? = UIColor.black
     {
         didSet{
             self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? " ", attributes: [.foregroundColor:placeholderColor ?? .black])
         }
     }
-    var leftMagin : CGFloat = 10 {
+    public var leftMagin : CGFloat = 10 {
         didSet{
             self.pq_leftView.frame.size.width = leftMagin
         }
