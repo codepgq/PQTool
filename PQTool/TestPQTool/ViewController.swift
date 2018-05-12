@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         
         print("dd".pq.tempDir())
         PQHUD.defaultSetHUD(nil)
+        
+        
     }
     
     @IBOutlet weak var textTF: PQTextField!{
@@ -26,7 +28,21 @@ class ViewController: UIViewController {
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        PQHUD.share.showError("error").dismiss(2)
+//        PQHUD.share.showError("error").dismiss(2)
+        
+        if let vc = TestXIBController.loadXIB(){
+            present(vc, animated: true, completion: nil)
+        }
+        return
+        
+        let alert = PQAlertController("dd", message: "dd")
+        alert.addTextInput("...", textStr: "input", secure: false) { (tf, alert) in
+                print(tf.text)
+            }.addButton("quxiao") { (action, alert) in
+                
+            }
+        present(alert, animated: true, completion: nil)
+        
     }
 }
 

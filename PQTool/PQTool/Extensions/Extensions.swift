@@ -114,7 +114,10 @@ public extension UIViewController {
     }
     
     class func loadXIB() -> UIViewController?{
-        return UIViewController(nibName: NSStringFromClass(self), bundle: nil)
+        if let nibName = NSStringFromClass(self).components(separatedBy: ".").last{
+            return UIViewController(nibName: nibName, bundle: nil)
+        }
+        return nil
     }
     
     func navTintColor(_ tintColor: UIColor = .white, barTintColor: UIColor = .white, textColor: UIColor = .white){

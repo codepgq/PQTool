@@ -29,7 +29,7 @@ public class PQAlertController: UIAlertController {
             text.placeholder = placeHolder
             text.text = textStr
             text.isSecureTextEntry = secure
-            text.addTarget(self, action: #selector(self.listenTextFieldValueChanged(_:)), for: .valueChanged)
+            text.addTarget(self, action: #selector(self.listenTextFieldValueChanged(_:)), for: .editingChanged)
             //保存block
             if let block = handler {
                 text.tag = self.nextTag()
@@ -64,8 +64,8 @@ extension PQAlertController{
     }
 }
 
-public extension UIAlertController{
-    public convenience init(_ title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .alert){
+public extension PQAlertController{
+    convenience init(_ title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .alert){
         self.init(title: title, message: message, preferredStyle: preferredStyle)
         
         if preferredStyle == .actionSheet, let popPresenter = popoverPresentationController {

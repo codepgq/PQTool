@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		608544D520A67BF300518BFC /* TestXIBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608544D320A67BF300518BFC /* TestXIBController.swift */; };
+		608544D620A67BF300518BFC /* TestXIBController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608544D420A67BF300518BFC /* TestXIBController.xib */; };
 		60F5BE7E20A03ECD008D00EB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */; };
 		60F5BE7F20A03ECD008D00EB /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60F5BE8020A03ECD008D00EB /* SVProgressHUD-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 60F5BE7720A03ECB008D00EB /* SVProgressHUD-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		608544D320A67BF300518BFC /* TestXIBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXIBController.swift; sourceTree = "<group>"; };
+		608544D420A67BF300518BFC /* TestXIBController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestXIBController.xib; sourceTree = "<group>"; };
 		60F5BDAF20A01F85008D00EB /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		60F5BE7520A03ECB008D00EB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		60F5BE7620A03ECB008D00EB /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				8F7D4F7B209FFB360010190B /* Assets.xcassets */,
 				8F7D4F7D209FFB360010190B /* LaunchScreen.storyboard */,
 				8F7D4F80209FFB360010190B /* Info.plist */,
+				608544D320A67BF300518BFC /* TestXIBController.swift */,
+				608544D420A67BF300518BFC /* TestXIBController.xib */,
 			);
 			path = TestPQTool;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7D4F7F209FFB360010190B /* LaunchScreen.storyboard in Resources */,
+				608544D620A67BF300518BFC /* TestXIBController.xib in Resources */,
 				8F7D4F7C209FFB360010190B /* Assets.xcassets in Resources */,
 				8F7D4F7A209FFB360010190B /* Main.storyboard in Resources */,
 			);
@@ -431,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7D4F77209FFB360010190B /* ViewController.swift in Sources */,
+				608544D520A67BF300518BFC /* TestXIBController.swift in Sources */,
 				8F7D4F75209FFB360010190B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
