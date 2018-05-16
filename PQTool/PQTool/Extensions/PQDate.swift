@@ -15,11 +15,18 @@ public protocol PQDateEncodable {
 }
 
 public extension PQDateEncodable where WrapperType == Date {
-    public func now() -> String{
+    func now() -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-mm-dd hh-MM-ss.sss"
         return formatter.string(from: Date())
     }
+    
+    func newUTC() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-mm-ddThh-MM-ss.ssZ"
+        return formatter.string(from: Date())
+    }
+    
 }
 
 public struct ExtensionPQDateEncodable<T>: PQDateEncodable{

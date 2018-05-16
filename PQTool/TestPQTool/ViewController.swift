@@ -17,7 +17,12 @@ class ViewController: UIViewController {
         print("dd".pq.tempDir())
         PQHUD.defaultSetHUD(nil)
         
-        
+        let btn = PQButton(.bottomText)
+        btn.setImage(#imageLiteral(resourceName: "device_add_device"), for: .normal)
+        btn.frame.size = CGSize(width: 95, height: 95)
+        btn.setTitle("ddd", for: .normal)
+        btn.frame.origin = CGPoint(x: 100, y: 100)
+        view.addSubview(btn)
     }
     
     @IBOutlet weak var textTF: PQTextField!{
@@ -29,6 +34,8 @@ class ViewController: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        PQHUD.share.showError("error").dismiss(2)
+//        PQHUD.share.show
+        
         
         if let vc = TestXIBController.loadXIB(){
             present(vc, animated: true, completion: nil)
