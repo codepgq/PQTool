@@ -36,6 +36,7 @@ class ViewController: UIViewController {
 //        PQHUD.share.showError("error").dismiss(2)
 //        PQHUD.share.show
         
+        print(Date().pq.newUTC())
         
         if let vc = TestXIBController.loadXIB(){
             present(vc, animated: true, completion: nil)
