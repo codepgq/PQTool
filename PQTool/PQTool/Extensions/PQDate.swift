@@ -23,7 +23,7 @@ public extension PQDateEncodable where WrapperType == Date {
     
     func newUTC() -> String{
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.ssZ"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.ssZ"
         return formatter.string(from: Date())
     }
     
