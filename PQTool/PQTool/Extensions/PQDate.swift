@@ -17,7 +17,7 @@ public protocol PQDateEncodable {
 public extension PQDateEncodable where WrapperType == Date {
     func now() -> String{
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-mm-dd hh-MM-ss.sss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sss"
         return formatter.string(from: Date())
     }
     
