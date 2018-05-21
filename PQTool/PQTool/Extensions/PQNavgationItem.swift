@@ -41,6 +41,10 @@ public extension NavigationItemProtocol {
         pq_pop(b)
     }
     
+    func pq_pop(_ block:@escaping NavigationItemBlock){
+        pq_pop(CGSize(width: 45, height: 25), backImageColor: .white, block)
+    }
+    
     func pq_pop(_ size: CGSize = CGSize(width: 45, height: 25), backImageColor: UIColor = .white ,_ block:@escaping NavigationItemBlock){
         let image = drawBackImage(backImageColor, lineWidth: 2, size: size)
         pq_pop(image, size: .zero, block: block)
