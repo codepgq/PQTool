@@ -14,7 +14,8 @@ public enum PQAddBarItemDirection: Int {
     case left = 0
     case right = 1
 }
-public var backImageColor = UIColor.white
+
+
 public typealias NavigationItemBlock = (_ btn: PQButton?) -> ()
 public protocol NavigationItemProtocol where Self: UIViewController {
     func pq_pop()
@@ -40,8 +41,8 @@ public extension NavigationItemProtocol {
         pq_pop(b)
     }
     
-    func pq_pop(_ block:@escaping NavigationItemBlock){
-        let image = drawBackImage(backImageColor, lineWidth: 2, size: CGSize(width: 50, height: 30))
+    func pq_pop(_ size: CGSize = CGSize(width: 45, height: 25), backImageColor: UIColor = .white ,_ block:@escaping NavigationItemBlock){
+        let image = drawBackImage(backImageColor, lineWidth: 2, size: size)
         pq_pop(image, size: .zero, block: block)
     }
     

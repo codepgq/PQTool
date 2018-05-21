@@ -15,16 +15,35 @@ public protocol PQDateEncodable {
 }
 
 public extension PQDateEncodable where WrapperType == Date {
+    /// 获取当前时间 yyyy-MM-dd HH:mm:ss.sss
     func now() -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sss"
         return formatter.string(from: Date())
     }
     
-    func newUTC() -> String{
+    /// 获取当前时间 yyyy-MM-dd'T'HH:mm:ss.ssZ
+    func nowUTC() -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.ssZ"
         return formatter.string(from: Date())
+    }
+    
+    /// 获取UTC的时间戳
+    func utcTimeinterval() -> String {
+        let date = Date()
+        let time = date.timeIntervalSince1970 * 1000
+        return "\(time)"
+    }
+    
+    /// 获取GMT的时间戳
+    func gmtTimeinterval() -> String {
+        let date = Date()
+        let zone = TimeZone.current
+        let interval = zone.secondsFromGMT(for: date)
+        let localDate = date.addingTimeInterval(Double(interval))
+        let time = localDate.timeIntervalSince1970 * 1000
+        return "\(time)"
     }
     
 }
