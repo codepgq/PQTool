@@ -36,20 +36,25 @@ class ViewController: UIViewController {
 //        PQHUD.share.showError("error").dismiss(2)
 //        PQHUD.share.show
         
-        print(Date().pq.newUTC())
+//        PQHUD.share.show("dddd").dismiss()
+//        PQHUD.share.showInfo("dddd").dismiss()
+//        PQHUD.share.showError("dddd").dismiss()
+//        PQHUD.share.showSuccess("ddd").dismiss()
         
-        if let vc = TestXIBController.loadXIB(){
-            present(vc, animated: true, completion: nil)
-        }
-        return
+        print(Date().pq.nowUTC())
         
-        let alert = PQAlertController("dd", message: "dd")
-        alert.addTextInput("...", textStr: "input", secure: false) { (tf, alert) in
-                print(tf.text)
-            }.addButton("quxiao") { (action, alert) in
-                
-            }
-        present(alert, animated: true, completion: nil)
+//        if let vc = TestXIBController.loadXIB(){
+//            present(vc, animated: true, completion: nil)
+//        }
+//        return
+        
+//        let alert = PQAlertController("dd", message: "dd")
+//        alert.addTextInput("...", textStr: "input", secure: false) { (tf, alert) in
+//                print(tf.text)
+//            }.addButton("quxiao") { (action, alert) in
+//
+//            }
+//        present(alert, animated: true, completion: nil)
         
     }
 }

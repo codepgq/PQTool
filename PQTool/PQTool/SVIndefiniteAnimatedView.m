@@ -52,12 +52,13 @@
         CALayer *maskLayer = [CALayer layer];
         
         
-        NSString * path = [[NSBundle mainBundle] pathForResource:@"HUD" ofType:@"bundle"];
-//        NSBundle *bundle = [NSBundle bundleForClass:[SVProgressHUD class]];
-//        NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:@"bundle"];
-//        NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+//        NSString * path = [[NSBundle mainBundle] pathForResource:@"HUD" ofType:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleForClass:[SVProgressHUD class]];
+        NSURL *url = [bundle URLForResource:@"SVProgressHUD" withExtension:@"bundle"];
+        NSBundle *imageBundle = [NSBundle bundleWithURL:url];
         
-        path = [path stringByAppendingPathComponent:@"angle-mask.png"];//[imageBundle pathForResource:@"angle-mask" ofType:@"png"];
+//        path = [path stringByAppendingPathComponent:@"angle-mask.png"];
+        NSString *path = [imageBundle pathForResource:@"angle-mask" ofType:@"png"];
         
         maskLayer.contents = (__bridge id)[[UIImage imageWithContentsOfFile:path] CGImage];
         maskLayer.frame = _indefiniteAnimatedLayer.bounds;

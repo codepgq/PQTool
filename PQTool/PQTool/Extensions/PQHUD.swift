@@ -55,6 +55,7 @@ public enum PQPushType: String {
 public class PQHUD: NSObject {
     
     public static let share: PQHUD = PQHUD()
+    public static var dismissTimeInterval: TimeInterval = 0.75
     
     public class func push(_ type: PQPushType){
         push(type.rawValue)
@@ -162,8 +163,13 @@ public class PQHUD: NSObject {
     }
     
     /// 隐藏
-    @discardableResult public func dismiss(_ timeInterval: TimeInterval = 0) -> PQHUD{
+    @discardableResult public func dismiss(_ timeInterval: TimeInterval = PQHUD.dismissTimeInterval) -> PQHUD{
         SVProgressHUD.dismiss(withDelay: timeInterval)
+        return self
+    }
+    /// 隐藏
+    @discardableResult public func dismissNow() -> PQHUD{
+        SVProgressHUD.dismiss(withDelay: 0)
         return self
     }
     
