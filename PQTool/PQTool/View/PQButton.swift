@@ -73,31 +73,34 @@ public class PQButton: UIButton {
     override public func layoutSubviews() {
         super.layoutSubviews()
         
-        let imageWidth = self.imageView?.frame.width ?? 0
-        let imageHeight = self.imageView?.frame.height ?? 0
-        let labelWidth = self.titleLabel?.frame.width ?? 0
-        let labelHeight = self.titleLabel?.frame.height ?? 0
         
-        let imageOffsetX = labelWidth/2
-        let imageOffsetY = labelHeight/2 + spacing/2
-        let labelOffsetX = imageWidth/2
-        let labelOffsetY = imageHeight/2 + spacing/2
+        guard let title = self.titleLabel?.text as NSString?, let titleFont = self.titleLabel?.font else { return }
         
+        let imageSize = self.imageRect(forContentRect: self.frame)
+        
+        let titleSize = title.size(withAttributes: [NSAttributedStringKey.font : titleFont])
+        
+        var titleInsets: UIEdgeInsets = self.titleEdgeInsets
+        var imageInsets: UIEdgeInsets = self.imageEdgeInsets
         switch type {
-        case .none:break
-        case .rightText:
-            imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2)
-            titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2)
         case .leftText:
-            imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2))
-            titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWidth + spacing/2), 0, imageWidth + spacing/2)
-        case .bottomText:
-            imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX)
-            titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX)
+            titleInsets = UIEdgeInsets(top: 0, left: -(imageSize.width * 2), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,
+                                       right: -(titleSize.width * 2 + spacing))
         case .topText:
-            imageEdgeInsets = UIEdgeInsetsMake(imageOffsetY, imageOffsetX, -imageOffsetY, -imageOffsetX)
-            titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX)
+            titleInsets = UIEdgeInsets(top: -(imageSize.height + titleSize.height + spacing),
+                                       left: -(imageSize.width), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+        case .bottomText:
+            titleInsets = UIEdgeInsets(top: (imageSize.height + titleSize.height + spacing),
+                                       left: -(imageSize.width), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+        default:
+            break
         }
+        
+        self.titleEdgeInsets = titleInsets
+        self.imageEdgeInsets = imageInsets
     }
     
     private var longPressGesture: UILongPressGestureRecognizer?
@@ -116,16 +119,10 @@ public class PQButton: UIButton {
         
     }
     
-    
-    
-    
-    
     private func createLongPressGesture(){
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureEvent(_:)))
         addGestureRecognizer(longPressGesture!)
     }
-    
-    
     
     private func clearTimer(){
         self.timer?.cancel()
