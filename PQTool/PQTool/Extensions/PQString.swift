@@ -106,6 +106,15 @@ public extension PQStringEncodable where WrapperType == String {
         return false
     }
     
+    /// 判断是否输入的是全中文或者不包含中文
+    ///
+    /// - Parameter all: 是否
+    /// - Returns: bool
+    func isAllChinese(_ all: Bool = true) -> Bool {
+        let partten = all ? "^[\\u4e00-\\u9fa5]{0,}$" : "^[^\\u4e00-\\u9fa5]{0,}$"
+        return regex(partten: partten)
+    }
+    
     func isEmail() -> Bool {
         do {
             //1、创建规则
