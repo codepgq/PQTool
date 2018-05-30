@@ -73,9 +73,14 @@ public extension PQStringEncodable where WrapperType == String {
     /// 获取当前版本号
     ///
     /// - Returns: 版本号
-    func currentVersion() -> String?{
+    func version() -> String?{
         let info: [String:Any] = Bundle.main.infoDictionary ?? [:]
         return info["CFBundleShortVersionString"] as? String
+    }
+    
+    func buildVersion() -> String?{
+        let info: [String:Any] = Bundle.main.infoDictionary ?? [:]
+        return info["CFBundleVersion"] as? String
     }
     
     

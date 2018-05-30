@@ -14,34 +14,7 @@ public protocol PQDateEncodable {
     var pq: WrapperType { get }
 }
 
-public enum DateFormat: String {
-    case g = "G"//      公元时代，例如AD公元
-    case year2 = "yy"//     年的后2位
-    case year4 = "yyyy"//   完整年
-    case month2 = "MM"//     月，显示为1-12,带前置0
-    case month3 = "MMM"//    月，显示为英文月份简写,如 Jan
-    case month4 = "MMMM"//   月，显示为英文月份全称，如 Janualy
-    case day2 = "dd"//     日，2位数表示，如02
-    case day1 = "d"//      日，1-2位显示，如2，无前置0
-    case week3 = "EEE"//    简写星期几，如Sun
-    case weeek4 = "EEEE"//   全写星期几，如Sunday
-    case amPm = "aa"//     上下午，AM/PM
-    case hour24_1 = "H"//      时，24小时制，0-23
-    case hour24_2 = "HH"//     时，24小时制，带前置0
-    case hour12_1 = "h"//      时，12小时制，无前置0
-    case hour12_2 = "hh"//     时，12小时制，带前置0
-    case minute = "m"//      分，1-2位
-    case minute2 = "mm"//     分，2位，带前置0
-    case second = "s"//      秒，1-2位
-    case second2 = "ss"//     秒，2位，带前置0
-    case ms = "S"//      毫秒
-    case zone = "Z"//      GMT（时区）
-    
-    
-    case point = "."
-    case lineVertical = "|"
-    case lineHorizontal = "-"
-}
+
 public extension PQDateEncodable where WrapperType == Date {
     
     func format(_ format: String) -> String{
