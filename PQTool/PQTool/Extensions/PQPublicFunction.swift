@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension NSObject{
+//public extension NSObject{
     public var pqScreenW: CGFloat {
        return UIScreen.main.bounds.width
     }
@@ -106,6 +106,6 @@ public extension NSObject{
     
     // MARK: block
     public typealias callbackFloat = (_ value: Float) -> ()
-}
+//}
 
 
