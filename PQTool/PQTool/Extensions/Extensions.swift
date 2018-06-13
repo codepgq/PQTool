@@ -46,8 +46,9 @@ public extension UITableView{
 
 // MARK: UICollectionView
 public extension UICollectionView{
-    convenience init(item size: CGSize, derection: UICollectionViewScrollDirection = .vertical, minLineSpacing: CGFloat, minInterItemSpacing: CGFloat, delegate: UICollectionViewDelegate?, dataSource: UICollectionViewDataSource?){
+    convenience init(item size: CGSize, derection: UICollectionViewScrollDirection = .vertical, headerReferenceSize: CGSize = .zero, minLineSpacing: CGFloat = 0, minInterItemSpacing: CGFloat = 0, delegate: UICollectionViewDelegate? = nil, dataSource: UICollectionViewDataSource? = nil){
         let layout = UICollectionViewFlowLayout()
+        layout.headerReferenceSize = headerReferenceSize
         layout.scrollDirection = derection
         layout.minimumLineSpacing = minLineSpacing
         layout.minimumInteritemSpacing = minInterItemSpacing
