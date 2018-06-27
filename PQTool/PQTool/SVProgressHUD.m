@@ -444,7 +444,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     CGFloat labelHeight = 0.0f;
     CGFloat labelWidth = 0.0f;
     
-    if(self.statusLabel.text) {
+    if(self.statusLabel.text.length > 0) {
         CGSize constraintSize = CGSizeMake(200.0f, 300.0f);
         labelRect = [self.statusLabel.text boundingRectWithSize:constraintSize
                                                         options:(NSStringDrawingOptions)(NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin)
@@ -473,7 +473,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     
     // |-spacing-content-(labelSpacing-label-)spacing-|
     hudHeight = SVProgressHUDVerticalSpacing + labelHeight + contentHeight + SVProgressHUDVerticalSpacing;
-    if(self.statusLabel.text && (imageUsed || progressUsed)){
+    if(self.statusLabel.text.length > 0 && (imageUsed || progressUsed)){
         // Add spacing if both content and label are used
         hudHeight += SVProgressHUDLabelSpacing;
     }
@@ -853,6 +853,11 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
             // Update text
             strongSelf.statusLabel.hidden = status.length == 0;
             strongSelf.statusLabel.text = status;
+            
+            // pgq 处理文字为空的情况
+            if (status.length == 0) {
+                strongSelf.statusLabel.hidden = true;
+            }
             
             // Fade in delayed if a grace time is set
             // An image will be dismissed automatically. Thus pass the duration as userInfo.

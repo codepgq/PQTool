@@ -114,16 +114,16 @@ public class PQHUD: NSObject {
     /// 显示一段文字，带转圈动画
     ///
     /// - Parameter status: 文字
-    @discardableResult public func show(_ status : String) -> PQHUD{
-        SVProgressHUD.show(withStatus: NSLocalizedString(status, comment: status))
+    @discardableResult public func show(_ status : String?) -> PQHUD{
+        SVProgressHUD.show(withStatus: status)
         return self
     }
     
     /// 设置文字,带感叹号
     ///
     /// - Parameter info: 文字
-    @discardableResult public func showInfo(_ info : String) -> PQHUD{
-        SVProgressHUD.showInfo(withStatus: NSLocalizedString(info, comment: info))
+    @discardableResult public func showInfo(_ info : String?) -> PQHUD{
+        SVProgressHUD.showInfo(withStatus: info)
         return self
     }
     
@@ -132,8 +132,8 @@ public class PQHUD: NSObject {
     /// - Parameters:
     ///   - image: 图片
     ///   - status: 文字
-    @discardableResult public func showImage(_ image :UIImage , status : String) -> PQHUD{
-        SVProgressHUD.show(image, status: NSLocalizedString(status, comment: status))
+    @discardableResult public func showImage(_ image :UIImage , status : String?) -> PQHUD{
+        SVProgressHUD.show(image, status: status)
         return self
     }
     
@@ -141,7 +141,7 @@ public class PQHUD: NSObject {
     ///
     /// - Parameter status: 文字
     @discardableResult public func showError(_ status: String) -> PQHUD{
-        SVProgressHUD.showError(withStatus: NSLocalizedString(status, comment: status))
+        SVProgressHUD.showError(withStatus: status)
        return self
     }
     
@@ -157,8 +157,8 @@ public class PQHUD: NSObject {
     /// 显示成功信息，会显示一个✅
     ///
     /// - Parameter status: 文字
-    @discardableResult public func showSuccess(_ status : String) -> PQHUD{
-        SVProgressHUD.showSuccess(withStatus: NSLocalizedString(status, comment: status))
+    @discardableResult public func showSuccess(_ status : String?) -> PQHUD{
+        SVProgressHUD.showSuccess(withStatus: status)
         return self
     }
     

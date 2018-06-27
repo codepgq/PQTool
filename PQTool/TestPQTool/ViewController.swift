@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         print("dd".pq.tempDir())
         PQHUD.defaultSetHUD(nil)
         
-        let btn = PQButton(.bottomText)
-        btn.setImage(#imageLiteral(resourceName: "device_add_device"), for: .normal)
+        let btn = PQButton()
+        btn.setImage(UIImage(named: "close_window"), for: .normal)
         btn.frame.size = CGSize(width: 95, height: 95)
         btn.setTitle("ddd", for: .normal)
         btn.frame.origin = CGPoint(x: 100, y: 100)
@@ -34,11 +34,11 @@ class ViewController: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        PQHUD.share.showError("error").dismiss(2)
-//        PQHUD.share.show
+//        PQHUD.share.show()
         
 //        PQHUD.share.show("dddd").dismiss()
 //        PQHUD.share.showInfo("dddd").dismiss()
-//        PQHUD.share.showError("dddd").dismiss()
+        PQHUD.share.showError("")
 //        PQHUD.share.showSuccess("ddd").dismiss()
         
         print("sddsf".pq.isAllChinese(),"是全中文")

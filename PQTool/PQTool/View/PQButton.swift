@@ -96,6 +96,9 @@ public class PQButton: UIButton {
                                        left: -(imageSize.width), bottom: 0, right: 0)
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
         default:
+            titleInsets = UIEdgeInsets(top: 0, left: -(imageSize.width * 2), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,
+                                       right: (titleSize.width * 2 + spacing))
             break
         }
         
