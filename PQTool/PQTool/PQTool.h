@@ -20,4 +20,5 @@ FOUNDATION_EXPORT const unsigned char PQToolVersionString[];
 #import "SVIndefiniteAnimatedView.h"
 #import "SVProgressAnimatedView.h"
 #import "SVRadialGradientLayer.h"
+#import "PQGIFImage.h"
 

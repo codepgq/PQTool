@@ -142,7 +142,7 @@ public class PQHUD: NSObject {
     /// - Parameter status: 文字
     @discardableResult public func showError(_ status: String) -> PQHUD{
         SVProgressHUD.showError(withStatus: status)
-       return self
+        return self
     }
     
     /// 显示进度
@@ -153,6 +153,35 @@ public class PQHUD: NSObject {
         return self
     }
     
+    @discardableResult public func showGIFImage(named imageNamed: String, status: String?) -> PQHUD{
+        if let image = PQGIFImage.image(withGIFNamed: imageNamed) {
+            SVProgressHUD.show(image, status: status)
+        }else{
+            print("gif image error")
+        }
+        return self
+    }
+    
+    @discardableResult public func showGIFImage(data imageData: Data, status: String?) -> PQHUD{
+        if let image = PQGIFImage.image(withGIFData: imageData) {
+            SVProgressHUD.show(image, status: status)
+        }else{
+            print("gif image error")
+        }
+        return self
+    }
+    
+    @discardableResult public func showGIFImage(url urlStr: String, status: String?) -> PQHUD{
+        PQGIFImage.image(withGIFUrl: urlStr, and: { (image) in
+            if let image = image {
+                SVProgressHUD.show(image, status: status)
+            }else{
+                print("gif image error")
+            }
+            
+        })
+        return self
+    }
     
     /// 显示成功信息，会显示一个✅
     ///
