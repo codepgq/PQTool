@@ -82,6 +82,9 @@ public class PQButton: UIButton {
         
         var titleInsets: UIEdgeInsets = self.titleEdgeInsets
         var imageInsets: UIEdgeInsets = self.imageEdgeInsets
+        
+        
+        
         switch type {
         case .leftText:
             titleInsets = UIEdgeInsets(top: 0, left: -(imageSize.width * 2), bottom: 0, right: 0)
@@ -96,9 +99,12 @@ public class PQButton: UIButton {
                                        left: -(imageSize.width), bottom: 0, right: 0)
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
         default:
-            titleInsets = UIEdgeInsets(top: 0, left: -(width - imageSize.width - spacing * 2), bottom: 0, right: 0)
-            imageInsets = UIEdgeInsets(top: 0, left: -(width - spacing), bottom: 0,
-                                       right: 0)
+            if width < imageSize.width + titleSize.width {
+                self.frame.size.width = imageSize.width + titleSize.width + spacing 
+            }
+            titleInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,
+                                       right: width - titleSize.width)
             break
         }
         

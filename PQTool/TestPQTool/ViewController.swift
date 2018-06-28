@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         
         let btn = PQButton()
         btn.setImage(UIImage(named: "schedule_room"), for: .normal)
-        btn.frame.size = CGSize(width: 200, height: 50)
-//        btn.sizeToFit()
+//        btn.frame.size = CGSize(width: 200, height: 50)        
+        btn.sizeToFit()
         btn.setTitle("ddd", for: .normal)
         btn.frame.origin = CGPoint(x: 100, y: 100)
         view.addSubview(btn)
