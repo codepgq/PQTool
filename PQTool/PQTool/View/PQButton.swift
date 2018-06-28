@@ -28,7 +28,7 @@ public class PQButton: UIButton {
     // MARK: 公开
     public typealias PQButtonBlock = (_ button: PQButton) -> Void
     /// 文字和图片的间距
-    public var spacing: CGFloat = 15.0
+    public var spacing: CGFloat = 0
     /// 最短长按时间
     public var minLongPressDuration: TimeInterval = 0.5
     /// 类型
@@ -99,12 +99,12 @@ public class PQButton: UIButton {
                                        left: -(imageSize.width), bottom: 0, right: 0)
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
         default:
-            if width < imageSize.width + titleSize.width {
-                self.frame.size.width = imageSize.width + titleSize.width + spacing 
+            if width < imageSize.width + titleSize.width + spacing {
+                self.frame.size.width = imageSize.width + titleSize.width + spacing * 2
             }
-            titleInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
-            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,
-                                       right: width - titleSize.width)
+            titleInsets = UIEdgeInsets(top: 0, left: spacing*2, bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: -spacing, bottom: 0,
+                                       right: 0)
             break
         }
         

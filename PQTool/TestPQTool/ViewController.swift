@@ -17,11 +17,25 @@ class ViewController: UIViewController {
         print("dd".pq.tempDir())
         PQHUD.defaultSetHUD(nil)
         
+        newBtn()
+        
         let btn = PQButton()
-        btn.setImage(UIImage(named: "schedule_room"), for: .normal)
-//        btn.frame.size = CGSize(width: 200, height: 50)        
-        btn.sizeToFit()
+        btn.setImage(UIImage(named: "device_add_device"), for: .normal)
         btn.setTitle("ddd", for: .normal)
+        //        btn.frame.size = CGSize(width: 200, height: 50)
+        btn.sizeToFit()
+        btn.spacing = 20
+        btn.center = view.center
+        view.addSubview(btn)
+    }
+    
+    private func newBtn(){
+        let btn = PQButton()
+        btn.setTitle("ddd", for: .normal)
+        btn.setImage(UIImage(named: "schedule_room"), for: .normal)
+        btn.spacing = 8
+        //        btn.frame.size = CGSize(width: 200, height: 50)
+        btn.sizeToFit()
         btn.frame.origin = CGPoint(x: 100, y: 100)
         view.addSubview(btn)
     }
