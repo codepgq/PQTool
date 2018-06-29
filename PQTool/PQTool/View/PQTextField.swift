@@ -80,12 +80,12 @@ public class PQTextField: UITextField {
 }
 
 public extension PQTextField {
-    convenience init(textColor : UIColor, placeholderColor: UIColor, palceholder: String?, leftMargin : CGFloat = 15) {
+    convenience init(textColor : UIColor, placeholderColor: UIColor, palceholder str: String?, leftMargin : CGFloat = 15) {
         self.init(frame: CGRect.zero)
-        self.placeholder = placeholder
-        self.placeholderColor = placeholderColor
         self.textColor = textColor
-        self.leftMargin = leftMargin
+        self.placeholder = str
+        self.setValue(placeholderColor, forKey: "placeholderColor")
+        self.setValue(leftMargin, forKey: "leftMargin")
     }
 }
 

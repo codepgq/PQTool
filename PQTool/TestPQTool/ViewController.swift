@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         btn.spacing = 20
         btn.center = view.center
         view.addSubview(btn)
+        
+        
+        let tf = PQTextField(textColor: UIColor.red, placeholderColor: .orange, palceholder: "dfdfd", leftMargin: 14)
+        tf.frame = CGRect(x: 0, y: 300, width: 100, height: 40)
+        tf.backgroundColor = .white
+        view.addSubview(tf)
     }
     
     private func newBtn(){
@@ -53,7 +59,7 @@ class ViewController: UIViewController {
         
 //        PQHUD.share.show("dddd").dismiss()
 //        PQHUD.share.showInfo("dddd").dismiss()
-        PQHUD.share.showError("")
+//        PQHUD.share.showError("")
 //        PQHUD.share.showSuccess("ddd").dismiss()
         
         print("sddsf".pq.isAllChinese(),"是全中文")

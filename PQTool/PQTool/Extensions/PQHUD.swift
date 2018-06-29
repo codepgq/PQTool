@@ -140,7 +140,7 @@ public class PQHUD: NSObject {
     /// 显示错误信息，会显示一个x
     ///
     /// - Parameter status: 文字
-    @discardableResult public func showError(_ status: String) -> PQHUD{
+    @discardableResult public func showError(_ status: String?) -> PQHUD{
         SVProgressHUD.showError(withStatus: status)
         return self
     }
