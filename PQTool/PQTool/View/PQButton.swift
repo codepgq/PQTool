@@ -182,17 +182,23 @@ extension UIImage {
             tempFont = size
             UIView.animate(withDuration: 0.25, animations: {
                 button.titleLabel?.font = UIFont.systemFont(ofSize: size.pointSize * 1.2)
-            })
+            }) { (_) in
+                self.stopAnimation()
+            }
         case .imageScale:
             tempImage = currentImage
             UIView.animate(withDuration: 0.25, animations: {
                 button.setImage(button.currentImage?.imageSize(scale: 1.2), for: .normal)
-            })
+            }) { (_) in
+                self.stopAnimation()
+            }
             
         case .transformScale:
             UIView.animate(withDuration: 0.25, animations: {
                 button.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            })
+            }) { (_) in
+                self.stopAnimation()
+            }
         }
     }
     
