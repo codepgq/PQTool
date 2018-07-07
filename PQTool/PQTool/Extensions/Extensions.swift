@@ -8,6 +8,15 @@
 
 import UIKit
 
+// MARK: - Optional
+extension Optional {
+    func withExtendedLiftTime(_ body: (Wrapped) -> Void){
+        if let value = self {
+            body(value)
+        }
+    }
+}
+
 // MARK: CG系列
 
 
