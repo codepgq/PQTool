@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		607AA18020F3041B001EDB7C /* PQUpgradeVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AA17F20F3041A001EDB7C /* PQUpgradeVersion.swift */; };
 		608544D520A67BF300518BFC /* TestXIBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608544D320A67BF300518BFC /* TestXIBController.swift */; };
 		608544D620A67BF300518BFC /* TestXIBController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608544D420A67BF300518BFC /* TestXIBController.xib */; };
 		60D438EE20E3B63300A9DAFD /* close_window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D438EC20E3B63300A9DAFD /* close_window@2x.png */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		607AA17F20F3041A001EDB7C /* PQUpgradeVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQUpgradeVersion.swift; sourceTree = "<group>"; };
 		608544D320A67BF300518BFC /* TestXIBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXIBController.swift; sourceTree = "<group>"; };
 		608544D420A67BF300518BFC /* TestXIBController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestXIBController.xib; sourceTree = "<group>"; };
 		60D438EC20E3B63300A9DAFD /* close_window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_window@2x.png"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		60F5BE3920A03799008D00EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				607AA17F20F3041A001EDB7C /* PQUpgradeVersion.swift */,
 				8F7D4F36209FF8330010190B /* PQAlertController.swift */,
 			);
 			path = Controller;
@@ -447,6 +450,7 @@
 				8F7D4F48209FF8460010190B /* PQData.swift in Sources */,
 				8F7D4F38209FF8340010190B /* PQTextField.swift in Sources */,
 				60F5BE8620A03ECD008D00EB /* SVProgressAnimatedView.m in Sources */,
+				607AA18020F3041B001EDB7C /* PQUpgradeVersion.swift in Sources */,
 				8F7D4F4E209FF8460010190B /* PQImage.swift in Sources */,
 				60F5BE8420A03ECD008D00EB /* SVIndefiniteAnimatedView.m in Sources */,
 				60D438F320E3BAC500A9DAFD /* PQGIFImage.m in Sources */,
