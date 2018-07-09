@@ -107,7 +107,11 @@ open class PQUpgradeVersion: NSObject {
         }
         
         if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         } else {
             throw (NSError(domain: "Can not open this url", code: 0, userInfo: nil) as Error)
         }
