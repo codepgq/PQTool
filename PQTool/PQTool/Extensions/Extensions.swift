@@ -9,8 +9,8 @@
 import UIKit
 
 // MARK: - Optional
-extension Optional {
-    func withExtendedLiftTime(_ body: (Wrapped) -> Void){
+public extension Optional {
+    public func withExtendedLiftTime(_ body: (Wrapped) -> Void){
         if let value = self {
             body(value)
         }

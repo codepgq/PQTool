@@ -61,13 +61,16 @@ class ViewController: UIViewController {
 //        PQHUD.share.showInfo("dddd").dismiss()
 //        PQHUD.share.showError("")
 //        PQHUD.share.showSuccess("ddd").dismiss()
+
+        var x: Int?
+        self?.wite
         
-        print("sddsf".pq.isAllChinese(),"是全中文")
-        print("地方".pq.isAllChinese(),"是全中文")
-        print("是否fd放到".pq.isAllChinese(false),"是全非中文")
-        print("ddd".pq.isAllChinese(false),"是全非中文")
-        
-        print(Date().pq.nowUTC())
+//        print("sddsf".pq.isAllChinese(),"是全中文")
+//        print("地方".pq.isAllChinese(),"是全中文")
+//        print("是否fd放到".pq.isAllChinese(false),"是全非中文")
+//        print("ddd".pq.isAllChinese(false),"是全非中文")
+//
+//        print(Date().pq.nowUTC())
         
 //        if let vc = TestXIBController.loadXIB(){
 //            present(vc, animated: true, completion: nil)
