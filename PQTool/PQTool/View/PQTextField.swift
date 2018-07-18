@@ -15,6 +15,12 @@ public class PQTextField: UITextField {
         delegate = self
     }
     
+    public override var placeholder: String? {
+        didSet{
+            self.attributedPlaceholder = NSAttributedString(string: placeholder ?? " ", attributes: [.foregroundColor:placeholderColor ?? .black])
+        }
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         delegate = self
