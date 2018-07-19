@@ -37,7 +37,14 @@ public class PQButton: UIButton {
     public var animationType: PQButtonAnimationType = .none
     
     /// disable background color
-    public var disableColor: UIColor?
+    public var disableColor: UIColor?{
+        didSet{
+            if let color = disableColor {
+                let image = UIImage().pq.drawRect(CGSize(width: 2, height: 2), color: color).stretchableImage(withLeftCapWidth: 1, topCapHeight: 1)
+                setBackgroundImage(image, for: .disabled)
+            }
+        }
+    }
     
 
     
@@ -77,13 +84,6 @@ public class PQButton: UIButton {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        
-        
-        if let color = disableColor, image(for: .disabled) == nil {
-            let size = (frame.size == .zero) ? UIScreen.main.bounds.size : frame.size
-            let image = UIImage().pq.drawRect(size, color: color)
-            setBackgroundImage(image, for: .disabled)
-        }
         
         guard let title = self.titleLabel?.text as NSString?, let titleFont = self.titleLabel?.font else { return }
         

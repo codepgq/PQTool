@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         btn.sizeToFit()
         btn.frame.origin = CGPoint(x: 100, y: 100)
         btn.backgroundColor = UIColor.red
-        btn.disableBackColor = .green
+        btn.disableColor = .green
         view.addSubview(btn)
         
         
