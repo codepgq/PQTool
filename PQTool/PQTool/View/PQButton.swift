@@ -36,6 +36,10 @@ public class PQButton: UIButton {
     
     public var animationType: PQButtonAnimationType = .none
     
+    public var disableBackColor: UIColor?
+    
+
+    
     public func buttonClick(_ block: @escaping PQButtonBlock){
         clickBlock = block
         listenTouchUpInside()
@@ -73,6 +77,11 @@ public class PQButton: UIButton {
     override public func layoutSubviews() {
         super.layoutSubviews()
         
+        
+        if let color = disableBackColor, image(for: .disabled) == nil {
+            let image = UIImage().pq.drawRect(frame.size, color: color)
+            setBackgroundImage(image, for: .disabled)
+        }
         
         guard let title = self.titleLabel?.text as NSString?, let titleFont = self.titleLabel?.font else { return }
         
@@ -119,6 +128,7 @@ public class PQButton: UIButton {
     private var longPressBlock: PQButtonBlock!
     private var tempImage: UIImage?
     private var tempFont: UIFont!
+    private(set) var tempBackgroundColor: UIColor?
     
     
     private func setupAnimation(){

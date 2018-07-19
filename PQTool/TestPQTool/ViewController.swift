@@ -38,13 +38,21 @@ class ViewController: UIViewController {
     private func newBtn(){
         let btn = PQButton()
         btn.setTitle("ddd", for: .normal)
-        btn.setImage(UIImage(named: "schedule_room"), for: .normal)
+//        btn.setImage(UIImage(named: "schedule_room"), for: .normal)
         btn.spacing = 8
         //        btn.frame.size = CGSize(width: 200, height: 50)
         btn.sizeToFit()
         btn.frame.origin = CGPoint(x: 100, y: 100)
+        btn.backgroundColor = UIColor.red
+        btn.disableBackColor = .green
         view.addSubview(btn)
+        
+        
+//        bbb?.setTitleColor(.gray, for: .disabled)
+        bbb = btn
     }
+    
+    var bbb: PQButton?
     
     @IBOutlet weak var textTF: PQTextField!{
         didSet{
@@ -62,8 +70,9 @@ class ViewController: UIViewController {
 //        PQHUD.share.showError("")
 //        PQHUD.share.showSuccess("ddd").dismiss()
 
-        var x: Int?
-        self?.wite
+    bbb?.isEnabled = !(bbb?.isEnabled ?? false)
+        print(bbb?.isEnabled)
+    
         
 //        print("sddsf".pq.isAllChinese(),"是全中文")
 //        print("地方".pq.isAllChinese(),"是全中文")
