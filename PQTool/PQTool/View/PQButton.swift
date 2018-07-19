@@ -80,7 +80,8 @@ public class PQButton: UIButton {
         
         
         if let color = disableColor, image(for: .disabled) == nil {
-            let image = UIImage().pq.drawRect(frame.size, color: color)
+            let size = (frame.size == .zero) ? UIScreen.main.bounds.size : frame.size
+            let image = UIImage().pq.drawRect(size, color: color)
             setBackgroundImage(image, for: .disabled)
         }
         
