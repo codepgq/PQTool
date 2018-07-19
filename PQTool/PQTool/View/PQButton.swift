@@ -36,7 +36,8 @@ public class PQButton: UIButton {
     
     public var animationType: PQButtonAnimationType = .none
     
-    public var disableBackColor: UIColor?
+    /// disable background color
+    public var disableColor: UIColor?
     
 
     
@@ -78,7 +79,7 @@ public class PQButton: UIButton {
         super.layoutSubviews()
         
         
-        if let color = disableBackColor, image(for: .disabled) == nil {
+        if let color = disableColor, image(for: .disabled) == nil {
             let image = UIImage().pq.drawRect(frame.size, color: color)
             setBackgroundImage(image, for: .disabled)
         }
