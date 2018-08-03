@@ -46,8 +46,6 @@ public class PQButton: UIButton {
         }
     }
     
-
-    
     public func buttonClick(_ block: @escaping PQButtonBlock){
         clickBlock = block
         listenTouchUpInside()

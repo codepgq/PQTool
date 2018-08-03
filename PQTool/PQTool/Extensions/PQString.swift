@@ -13,6 +13,11 @@ public protocol PQStringEncodable {
     var pq: WrapperType { get }
 }
 
+public enum RegexType: String {
+    case onceOrMore = ".+?"
+    case zeroOrMore = ".*?"
+}
+
 public extension PQStringEncodable where WrapperType == String {
     
     func localized() -> String{
@@ -160,14 +165,39 @@ public extension PQStringEncodable where WrapperType == String {
         return []
     }
     
+    func sub(start: Character, end: Character) -> String? {
+        guard var sIdx = pq.index(of: start),
+              let eIdx = pq.index(of: end),
+              sIdx < eIdx  else {
+                return nil
+        }
+        sIdx = pq.index(sIdx, offsetBy: 1)
+        return String(pq[sIdx..<eIdx])
+    }
+    
+    subscript(_ range: Range<Int>) -> String {
+        let newStartIndex = pq.index(pq.startIndex, offsetBy: range.lowerBound)
+        let newEndIndex   = pq.index(pq.startIndex, offsetBy: range.upperBound)
+        return String(pq[newStartIndex..<newEndIndex])
+    }
+    
+    subscript(_ range: NSRange) -> String? {
+        guard let dd = Range(range) else { return nil }
+        let newStartIndex = pq.index(pq.startIndex, offsetBy: dd.lowerBound)
+        let newEndIndex   = pq.index(pq.startIndex, offsetBy: dd.upperBound)
+        return String(pq[newStartIndex..<newEndIndex])
+    }
+    
     func findStart(_ first: String, end: String) -> [NSRange]{
         do{
-            let partten = "\\\(first)(.+?)\\\(end)"
+            let partten = "\(first)(.+?)\(end)"
             let regex = try NSRegularExpression(pattern: partten, options: NSRegularExpression.Options.caseInsensitive)
             let results = regex.matches(in: pq, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSRange(location: 0, length: pq.count))
-            return results.map({ (result) -> NSRange in
-                return result.range
-            })
+            return results.map({
+                let range = $0.range
+                let loction = range.location + first.count - 1
+                let length = range.length - first.count - end.count + 2
+                return NSRange(location: loction, length: length) })
         }catch{
             print("find error",error)
         }

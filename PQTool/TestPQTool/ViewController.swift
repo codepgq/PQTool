@@ -62,6 +62,24 @@ class ViewController: UIViewController {
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        var str = "sdfsadfsf(23333)fsldfjsdlkfjsdlksa(eeee)dfjlsdkfj"
+        if let range = str.pq.findStart("sf\\(", end: "\\)").first {
+            print(str.pq[range])
+            
+        }
+        
+        
+        
+        if let range = str.pq.findStart("ksa\\(", end: "\\)").first {
+           var s = str.pq[range]
+            print(s)
+            
+        }
+        
+        print(str.pq.sub(start: "s", end: "f"))
+        
+        
 //        PQHUD.share.showError("error").dismiss(2)
 //        PQHUD.share.show()
         
