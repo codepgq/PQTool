@@ -69,6 +69,8 @@ class ViewController: UIViewController {
             
         }
         
+        let sss = str.pq.findStrStart("sf\\(", end: "\\)")
+        print(sss)
         
         
         if let range = str.pq.findStart("ksa\\(", end: "\\)").first {

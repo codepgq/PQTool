@@ -165,6 +165,8 @@ public extension PQStringEncodable where WrapperType == String {
         return []
     }
     
+    
+    
     func sub(start: Character, end: Character) -> String? {
         guard var sIdx = pq.index(of: start),
               let eIdx = pq.index(of: end),
@@ -186,6 +188,12 @@ public extension PQStringEncodable where WrapperType == String {
         let newStartIndex = pq.index(pq.startIndex, offsetBy: dd.lowerBound)
         let newEndIndex   = pq.index(pq.startIndex, offsetBy: dd.upperBound)
         return String(pq[newStartIndex..<newEndIndex])
+    }
+    
+    func findStrStart(_ first: String, end: String) -> [String] {
+        return findStart(first, end: end).compactMap { range -> String?in
+            return self[range]
+        }
     }
     
     func findStart(_ first: String, end: String) -> [NSRange]{
