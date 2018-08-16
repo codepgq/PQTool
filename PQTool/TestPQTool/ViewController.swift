@@ -9,6 +9,24 @@
 import UIKit
 import PQTool
 
+extension UIColor {
+    var redValue: CGFloat {
+        var red: CGFloat = 0
+        UIColor.red.getRed(&red, green: nil, blue: nil, alpha: nil)
+        return red
+    }
+    var greenValue: CGFloat {
+        var red: CGFloat = 0
+        UIColor.red.getRed(nil, green: &red, blue: nil, alpha: nil)
+        return red
+    }
+    var blueValue: CGFloat {
+        var red: CGFloat = 0
+        UIColor.red.getRed(nil, green: nil, blue: &red, alpha: nil)
+        return red
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

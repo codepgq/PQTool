@@ -32,7 +32,6 @@ public class PQGCD: NSObject {
         queue(DispatchQueue.global(), block: block)
     }
     
-    
     /// 指定线程 - 异步
     ///
     /// - Parameters:

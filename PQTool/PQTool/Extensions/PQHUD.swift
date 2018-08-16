@@ -8,68 +8,59 @@
 
 import UIKit
 
+/*
 public enum PQPushType: String {
     /// wifi
-    case wifi =             "App-Prefs:root=WIFI"
+    case wifi =             "A p p - P r e f s : r o o t = WIFI"
     /// bluetooth
-    case bluetooth =        "App-Prefs:root=Bluetooth"
+    case bluetooth =        "A p p - P r e f s : r o o t = Bluetooth"
     /// 蜂窝移动网络
-    case wwan =             "App-Prefs:root=MOBILE_DATA_SETTINGS_ID"
+    case wwan =             "A p p - P r e f s : r o o t = MOBILE_DATA_SETTINGS_ID"
     /// 热点
-    case ap =               "App-Prefs:root=INTERNET_TETHERING"
+    case ap =               "A p p - P r e f s : r o o t = INTERNET_TETHERING"
     /// 运营商
-    case carrier =          "App-Prefs:root=Carrier"
+    case carrier =          "A p p - P r e f s : r o o t = Carrier"
     /// 通知
-    case noti =             "App-Prefs:root=NOTIFICATIONS_ID"
+    case noti =             "A p p - P r e f s : r o o t = NOTIFICATIONS_ID"
     /// 通用
-    case general =          "App-Prefs:root=General"
+    case general =          "A p p - P r e f s : r o o t = General"
     /// 关于手机
-    case aboutPhone =       "App-Prefs:root=General&path=About"
+    case aboutPhone =       "A p p - P r e f s : r o o t = General&path=About"
     /// 键盘
-    case keybaord =         "App-Prefs:root=General&path=Keyboard"
+    case keybaord =         "A p p - P r e f s : r o o t = General&path=Keyboard"
     /// 辅助功能
-    case accessibility =    "App-Prefs:root=General&path=ACCESSIBILITY"
+    case accessibility =    "A p p - P r e f s : r o o t = General&path=ACCESSIBILITY"
     /// 语言地区
-    case region =           "App-Prefs:root=General&path=INTERNATIONAL"
+    case region =           "A p p - P r e f s : r o o t = General&path=INTERNATIONAL"
     /// 重置手机
-    case reset =            "App-Prefs:root=Reset"
+    case reset =            "A p p - P r e f s : r o o t = Reset"
     /// 墙纸
-    case wallpaper =        "App-Prefs:root=Wallpaper"
+    case wallpaper =        "A p p - P r e f s : r o o t = Wallpaper"
     /// siri
-    case siri =             "App-Prefs:root=SIRI"
+    case siri =             "A p p - P r e f s : r o o t = SIRI"
     /// 隐私
-    case privacy =          "App-Prefs:root=Privacy"
+    case privacy =          "A p p - P r e f s : r o o t = Privacy"
     /// safari
-    case safari =           "App-Prefs:root=SAFARI"
+    case safari =           "A p p - P r e f s : r o o t = SAFARI"
     /// 音乐
-    case music =            "App-Prefs:root=MUSIC"
+    case music =            "A p p - P r e f s : r o o t = MUSIC"
     /// 音乐均衡器
-    case musicEQ =          "App-Prefs:root=MUSIC&path=com.apple.Music:EQ"
+    case musicEQ =          "A p p - P r e f s : r o o t = MUSIC&path=com.apple.Music:EQ"
     /// 照片与相机
-    case photo =            "App-Prefs:root=Photos"
+    case photo =            "A p p - P r e f s : r o o t = Photos"
     /// facetime
-    case facetime =         "App-Prefs:root=FACETIME"
-    case vpn =              "App-Prefs:root=General&path=Network/VPN"
-}
+    case facetime =         "A p p - P r e f s : r o o t = FACETIME"
+    case vpn =              "A p p - P r e f s : r o o t = General&path=Network/VPN"
+}*/
 
 public class PQHUD: NSObject {
     
     public static let share: PQHUD = PQHUD()
     public static var dismissTimeInterval: TimeInterval = 0.75
     
+    #if false
     public class func push(_ type: PQPushType){
-        push(type.rawValue)
-    }
-    
-    class func push(_ string: String){
-        let url = URL(string: string)
-        if UIApplication.shared.canOpenURL(url!) {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url!)
-            }
-        }
+        push(type.rawValue.split(separator: " ").map(String.init).reduce("", { $0 + $1 }))
     }
     
     /// 跳转到WIFI设置界面
@@ -83,6 +74,21 @@ public class PQHUD: NSObject {
     public class func jumpToNoti(){
         push(.noti)
     }
+    
+    #endif
+    
+    class func push(_ string: String){
+        let url = URL(string: string)
+        if UIApplication.shared.canOpenURL(url!) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url!)
+            }
+        }
+    }
+    
+    
     
     public class func jumpToMyAppSet(){
         push(UIApplicationOpenSettingsURLString)
