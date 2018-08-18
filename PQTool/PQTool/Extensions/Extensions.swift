@@ -159,7 +159,13 @@ public extension UIViewController {
             
             if bottom > keyboardFrame.origin.y {//表示会被挡住
                 UIView.animate(withDuration: 0.25, animations: {[weak self] in
-                    self?.view.transform = CGAffineTransform(translationX: 0, y:  keyboardFrame.origin.y - bottom)
+                    
+                    if keyboardFrame.origin.y - bottom > 0 {
+                        self?.view.transform = .identity
+                    } else {                    
+                        self?.view.transform = CGAffineTransform(translationX: 0, y:  keyboardFrame.origin.y - bottom)
+                    }
+                    
                 })
             }
             
