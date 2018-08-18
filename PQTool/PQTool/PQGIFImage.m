@@ -88,13 +88,13 @@
 
 {
     
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@@%zdx", name, scale] ofType:@"gif"];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@@%lux", name, (unsigned long)scale] ofType:@"gif"];
     
     if (!imagePath) {
         
         (scale + 1 > 3) ? (scale -= 1) : (scale += 1);
         
-        imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@@%zdx", name, scale] ofType:@"gif"];
+        imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@@%lux", name, (unsigned long)scale] ofType:@"gif"];
         
     }
     

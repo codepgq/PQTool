@@ -145,27 +145,20 @@ public extension UIViewController {
         
         let keyboardFrame : CGRect = ((noti.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue)!
         
-        if (keyboardFrame.origin.y - UIScreen.main.bounds.size.height) == 0 {
+        //展示
+        let frame : CGRect = findFirstResponder(view)
+        if frame == .zero || keyboardFrame.minY == UIScreen.main.bounds.height{
             //回收
             UIView.animate(withDuration: 0.25, animations: {[weak self] in
                 self?.view.transform = .identity
             })
         }else{
-            //展示
-            let frame : CGRect = findFirstResponder(view)
             //得到最大的y轴坐标
-            let bottom = frame.origin.y + frame.size.height + (pq_isiPhoneX() ? 40 : 10)
-            
-            
-            if bottom > keyboardFrame.origin.y {//表示会被挡住
+            let bottom = frame.maxY + (pq_isiPhoneX() ? 98 : 10)
+
+            if bottom > keyboardFrame.minY {//表示会被挡住
                 UIView.animate(withDuration: 0.25, animations: {[weak self] in
-                    
-                    if keyboardFrame.origin.y - bottom > 0 {
-                        self?.view.transform = .identity
-                    } else {                    
-                        self?.view.transform = CGAffineTransform(translationX: 0, y:  keyboardFrame.origin.y - bottom)
-                    }
-                    
+                    self?.view.transform = CGAffineTransform(translationX: 0, y:  keyboardFrame.minY - bottom)
                 })
             }
             
