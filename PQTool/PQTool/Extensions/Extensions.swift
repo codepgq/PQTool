@@ -154,7 +154,8 @@ public extension UIViewController {
             //展示
             let frame : CGRect = findFirstResponder(view)
             //得到最大的y轴坐标
-            let bottom = frame.origin.y + frame.size.height + 30
+            let bottom = frame.origin.y + frame.size.height + (pq_isiPhoneX() ? 40 : 10)
+            
             
             if bottom > keyboardFrame.origin.y {//表示会被挡住
                 UIView.animate(withDuration: 0.25, animations: {[weak self] in

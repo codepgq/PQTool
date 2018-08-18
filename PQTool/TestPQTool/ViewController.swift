@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        keyboardLayout()
         print("dd".pq.tempDir())
         PQHUD.defaultSetHUD(nil)
         
