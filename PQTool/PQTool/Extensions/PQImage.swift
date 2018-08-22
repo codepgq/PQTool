@@ -183,6 +183,36 @@ public extension PQImageEncodable where WrapperType == UIImage {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
  
     }
+    
+    
+    /// scale size
+    ///
+    /// - Parameter size: size
+    /// - Returns: image?
+    func scale(size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 50, height: 50), false, UIScreen.main.scale)
+        pq.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: 50, height: 50)))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
+    /// scale value
+    ///
+    /// - Parameter value: value
+    /// - Returns: image?
+    func scale(value: CGFloat) -> UIImage? {
+        var size = pq.size
+        size.width = size.width * value
+        size.height = size.height * value
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        pq.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
 }
 
 public struct ExtensionPQImageEncodable<T>: PQImageEncodable {
