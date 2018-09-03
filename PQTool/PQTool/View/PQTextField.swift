@@ -38,24 +38,31 @@ public class PQTextField: UITextField {
         }
     }
     
-    public func textfiledClickReturn(_ block : ((_ textfield : PQTextField)->Void)?){
+    public override func deleteBackward() {
+        super.deleteBackward()
+        deleteKeyPressBlock?(self)
+    }
+    
+    public func deleteKeyPress(_ block : ((_ textfield : PQTextField)->Void)?) {
+        deleteKeyPressBlock = block
+    }
+    
+    public func pressReturn(_ block : ((_ textfield : PQTextField)->Void)?){
         returnBlock = block
     }
-    public func textfiledBeginEditing(_ block : ((_ textfield : PQTextField)->Void)?){
+    public func beginEditing(_ block : ((_ textfield : PQTextField)->Void)?){
         beginBlock = block
     }
-    public func textfiledEndEditing(_ block : ((_ textfield : PQTextField)->Void)?){
+    public func endEditing(_ block : ((_ textfield : PQTextField)->Void)?){
         endBlock = block
     }
-    public func textfiledTextChange(_ block : ((_ textfield : PQTextField)->Void)?){
+    public func textChange(_ block : ((_ textfield : PQTextField)->Void)?){
         addTarget(self, action: #selector(textValueChange(_:)), for: .editingChanged)
         changeBlock = block
     }
     
     @objc private func textValueChange(_ textfield : PQTextField) {
-        if let block = changeBlock {
-            block(textfield)
-        }
+        changeBlock?(textfield)
     }
     
     // MARK: 属性
@@ -79,6 +86,7 @@ public class PQTextField: UITextField {
         self.leftViewMode = .always
         return view
     }()
+    private lazy var deleteKeyPressBlock : ((_ textfield : PQTextField)->Void)? = nil
     private lazy var returnBlock : ((_ textfield : PQTextField)->Void)? = nil
     private lazy var beginBlock : ((_ textfield : PQTextField)->Void)? = nil
     private lazy var endBlock : ((_ textfield : PQTextField)->Void)? = nil
@@ -97,23 +105,17 @@ public extension PQTextField {
 
 extension PQTextField : UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let block = returnBlock {
-            block(textField as! PQTextField)
-        }
+        returnBlock?(textField as! PQTextField)
         textField.resignFirstResponder()
         return true
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let block = beginBlock {
-            block(textField as! PQTextField)
-        }
+        beginBlock?(beginBlock as! PQTextField)
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        if let block = endBlock {
-            block(textField as! PQTextField)
-        }
+        endBlock?(textField as! PQTextField)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
@@ -127,5 +129,17 @@ extension PQTextField : UITextFieldDelegate {
         
         return false
         
+    }
+    
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
     }
 }

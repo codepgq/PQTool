@@ -74,8 +74,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textTF: PQTextField!{
         didSet{
-            textTF.textfiledTextChange { (tf) in
+            textTF.textChange { (tf) in
                 print(tf.text)
+            }
+            
+            textTF.deleteKeyPress { (tf) in
+                print(#function)
             }
         }
     }
