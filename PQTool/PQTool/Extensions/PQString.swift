@@ -126,25 +126,11 @@ public extension PQStringEncodable where WrapperType == String {
     }
     
     func isEmail() -> Bool {
-        do {
-            //1、创建规则
-            let pattern = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"
-            
-            //2、创建正则表达式
-            let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
-            
-            //3、匹配
-            let range = regex.rangeOfFirstMatch(in: pq, options: NSRegularExpression.MatchingOptions(rawValue : 0), range: NSRange(location: 0, length: pq.count))
-            
-            if range.location == 0 && range.length >= 5 {
-                return true
-            }
-            
-        } catch{
-            print(error)
-        }
-        
-        return false
+        return regex(partten: "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$")
+    }
+    
+    func isPhoneNumber() -> Bool {
+        return regex(partten: "^[1][3,4,5,7,8][0-9]{9}$")
     }
     
     /// 查找字符串

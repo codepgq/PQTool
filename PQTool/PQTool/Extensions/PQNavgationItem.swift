@@ -15,9 +15,11 @@ public enum PQAddBarItemDirection: Int {
     case right = 1
 }
 
+private var popImageColor: UIColor = .white
 
 public typealias NavigationItemBlock = (_ btn: PQButton?) -> ()
 public protocol NavigationItemProtocol where Self: UIViewController {
+    
     func pq_pop()
     
     func pq_pop(_ block:@escaping NavigationItemBlock)
@@ -34,6 +36,14 @@ public protocol NavigationItemProtocol where Self: UIViewController {
 }
 // MARK: 默认实现
 public extension NavigationItemProtocol {
+    
+    /// 设置反馈箭头的颜色 default white
+    ///
+    /// - Parameter color: color
+    func pq_setPopImageColor(_ color: UIColor = .white) {
+        popImageColor = color
+    }
+    
     func pq_pop(){
         let b : NavigationItemBlock = {[weak self] (btn) in
             self?.navigationController?.popViewController(animated: true)
@@ -42,7 +52,7 @@ public extension NavigationItemProtocol {
     }
     
     func pq_pop(_ block:@escaping NavigationItemBlock){
-        pq_pop(CGSize(width: 45, height: 25), backImageColor: .white, block)
+        pq_pop(backImageColor: popImageColor, block)
     }
     
     func pq_pop(_ size: CGSize = CGSize(width: 45, height: 25), backImageColor: UIColor = .white ,_ block:@escaping NavigationItemBlock){

@@ -80,6 +80,9 @@ class ViewController: UIViewController {
             textTF.deleteKeyPress { (tf) in
                 print(#function)
             }
+            textTF.beginEditing { (tf) in
+                print("beginEditing")
+            }
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
