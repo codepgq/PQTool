@@ -111,7 +111,7 @@ extension PQTextField : UITextFieldDelegate {
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        beginBlock?(beginBlock as! PQTextField)
+        beginBlock?(textField as! PQTextField)
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {

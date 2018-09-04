@@ -77,7 +77,6 @@ class ViewController: UIViewController {
             textTF.textChange { (tf) in
                 print(tf.text)
             }
-            
             textTF.deleteKeyPress { (tf) in
                 print(#function)
             }
