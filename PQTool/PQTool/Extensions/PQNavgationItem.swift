@@ -40,7 +40,7 @@ public extension NavigationItemProtocol {
     /// 设置反馈箭头的颜色 default white
     ///
     /// - Parameter color: color
-    func pq_setPopImageColor(_ color: UIColor = .white) {
+    func pq_setPopImageFillColor(_ color: UIColor = .white) {
         popImageColor = color
     }
     
