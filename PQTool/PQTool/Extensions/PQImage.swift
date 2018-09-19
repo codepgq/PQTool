@@ -112,8 +112,8 @@ public extension PQImageEncodable where WrapperType == UIImage {
             let height = text.boundingRect(with: CGSize(width: item.size.width, height: CGFloat.greatestFiniteMagnitude), options: .usesDeviceMetrics, attributes: nil, context: nil).height + 8
             
             let rect = CGRect(x: backImageWidth, y: (item.size.height - height) * 0.5, width: item.size.width * 0.6, height: height)
-            var dict: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: item.fontSize)]
-            dict[NSAttributedStringKey.foregroundColor] = item.textColor
+            var dict: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: item.fontSize)]
+            dict[NSAttributedString.Key.foregroundColor] = item.textColor
             
             text.draw(in: rect, withAttributes: dict)
         }

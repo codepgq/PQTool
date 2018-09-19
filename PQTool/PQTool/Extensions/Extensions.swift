@@ -55,7 +55,7 @@ public extension UITableView{
 
 // MARK: UICollectionView
 public extension UICollectionView{
-    convenience init(item size: CGSize, derection: UICollectionViewScrollDirection = .vertical, headerReferenceSize: CGSize = .zero, minLineSpacing: CGFloat = 0, minInterItemSpacing: CGFloat = 0, delegate: UICollectionViewDelegate? = nil, dataSource: UICollectionViewDataSource? = nil){
+    convenience init(item size: CGSize, derection: UICollectionView.ScrollDirection = .vertical, headerReferenceSize: CGSize = .zero, minLineSpacing: CGFloat = 0, minInterItemSpacing: CGFloat = 0, delegate: UICollectionViewDelegate? = nil, dataSource: UICollectionViewDataSource? = nil){
         let layout = UICollectionViewFlowLayout()
         layout.headerReferenceSize = headerReferenceSize
         layout.scrollDirection = derection
@@ -104,7 +104,7 @@ public extension UISlider{
 
 // MARK: UIStackView
 public extension UIStackView{
-    convenience init(_ axis: UILayoutConstraintAxis, alignment: UIStackViewAlignment, distribution: UIStackViewDistribution){
+    convenience init(_ axis: NSLayoutConstraint.Axis, alignment: UIStackView.Alignment, distribution: UIStackView.Distribution){
         self.init(frame: .zero)
         self.axis = axis
         self.alignment = alignment
@@ -134,16 +134,16 @@ public extension UIViewController {
         self.navigationController?.navigationBar.tintColor = tintColor
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: textColor]
+            [NSAttributedString.Key.foregroundColor: textColor]
     }
     
     func keyboardLayout(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWiiChange(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWiiChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @objc private func keyboardFrameWiiChange(_ noti : Notification){
         
-        let keyboardFrame : CGRect = ((noti.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue)!
+        let keyboardFrame : CGRect = ((noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue)!
         
         //展示
         let frame : CGRect = findFirstResponder(view)

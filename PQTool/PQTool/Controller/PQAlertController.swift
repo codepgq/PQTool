@@ -12,7 +12,7 @@ public class PQAlertController: UIAlertController {
     
     public typealias PQActionBlock = ((_ action: UIAlertAction,_ alert: PQAlertController) -> Void)
     public typealias PQTextFieldBlock = ((_ action: UITextField,_ alert: PQAlertController) -> Void)
-    @discardableResult public func addButton(_ title: String?, style: UIAlertActionStyle = .default, handler: PQActionBlock?) -> PQAlertController{
+    @discardableResult public func addButton(_ title: String?, style: UIAlertAction.Style = .default, handler: PQActionBlock?) -> PQAlertController{
         let action = UIAlertAction(title: title, style: style) { (action) in
             if let block = handler{
                 block(action,self)
@@ -65,7 +65,7 @@ extension PQAlertController{
 }
 
 public extension PQAlertController{
-    convenience init(_ title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .alert){
+    convenience init(_ title: String?, message: String?, preferredStyle: UIAlertController.Style = .alert){
         self.init(title: title, message: message, preferredStyle: preferredStyle)
         
         if preferredStyle == .actionSheet, let popPresenter = popoverPresentationController {

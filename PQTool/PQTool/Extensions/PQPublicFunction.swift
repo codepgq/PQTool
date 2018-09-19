@@ -97,7 +97,7 @@ import UIKit
     // 创建定时器
     public func openTimer(timeInterval: TimeInterval, target: Any, selector: Selector, repeats: Bool) -> Timer {
         let timer = Timer.scheduledTimer(timeInterval: timeInterval, target: target, selector: selector, userInfo: nil, repeats: repeats)
-        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         return timer
     }
     

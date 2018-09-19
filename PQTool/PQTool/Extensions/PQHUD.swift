@@ -91,7 +91,7 @@ public class PQHUD: NSObject {
     
     
     public class func jumpToMyAppSet(){
-        push(UIApplicationOpenSettingsURLString)
+        push(UIApplication.openSettingsURLString)
     }
     
     public class func defaultSetHUD(_ block: (() -> ())?){

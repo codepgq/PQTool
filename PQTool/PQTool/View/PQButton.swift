@@ -87,7 +87,7 @@ public class PQButton: UIButton {
         
         let imageSize = self.imageRect(forContentRect: self.frame)
         
-        let titleSize = title.size(withAttributes: [NSAttributedStringKey.font : titleFont])
+        let titleSize = title.size(withAttributes: [NSAttributedString.Key.font : titleFont])
         
         var titleInsets: UIEdgeInsets = self.titleEdgeInsets
         var imageInsets: UIEdgeInsets = self.imageEdgeInsets

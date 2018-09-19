@@ -92,7 +92,7 @@ public extension NavigationItemProtocol {
     }
     
     func pq_addBarItem(title: String, derection: PQAddBarItemDirection, titleColor: UIColor = .white, block: NavigationItemBlock?){
-        let size = (title as NSString).boundingRect(with: CGSize(width: 0, height: 30), options: [.usesLineFragmentOrigin,.usesDeviceMetrics], attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 17)], context: nil).size
+        let size = (title as NSString).boundingRect(with: CGSize(width: 0, height: 30), options: [.usesLineFragmentOrigin,.usesDeviceMetrics], attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 17)], context: nil).size
         let button = PQButton(frame: CGRect(origin: .zero, size: CGSize(width: size.width + 15, height: 30)))
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
