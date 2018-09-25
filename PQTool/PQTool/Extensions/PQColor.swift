@@ -123,6 +123,16 @@ public extension PQColorEncodable where WrapperType == UIColor {
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(a) / 100.0)
     }
     
+    /// get color info 
+    func rgba() -> (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        pq.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return (red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
     /// h s b a [0.0 - 1.0]
     func hsba(h: Double, s: Double, b: Double, a: Double) -> UIColor {
         return UIColor(hue: CGFloat(h), saturation: CGFloat(s), brightness: CGFloat(b), alpha: CGFloat(a))

@@ -213,6 +213,24 @@ public extension PQImageEncodable where WrapperType == UIImage {
         
         return image
     }
+    
+    func drawColorImage(from: UIColor, to: UIColor, progress: Float, size: CGSize = CGSize(width: 40, height: 40)) -> (color: UIColor, image: UIImage) {
+        let fromRGBAInfo = from.pq.rgba()
+        let toRGBAInfo = to.pq.rgba()
+        
+        let red: CGFloat = fromRGBAInfo.red + (toRGBAInfo.red - fromRGBAInfo.red) * CGFloat(progress)
+        let green: CGFloat = fromRGBAInfo.green + (toRGBAInfo.green - fromRGBAInfo.green) * CGFloat(progress)
+        let blue: CGFloat = fromRGBAInfo.blue + (toRGBAInfo.blue - fromRGBAInfo.blue) * CGFloat(progress)
+        let alpha: CGFloat = fromRGBAInfo.alpha + (toRGBAInfo.alpha - fromRGBAInfo.alpha) * CGFloat(progress)
+        print(red,green,blue,alpha)
+        UIGraphicsBeginImageContext(size)
+        let color = UIColor(red: red , green: green, blue: blue, alpha: alpha)
+        color.setFill()
+        UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: 5).fill()
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return (color: color, image: image ?? UIImage())
+    }
 }
 
 public struct ExtensionPQImageEncodable<T>: PQImageEncodable {
