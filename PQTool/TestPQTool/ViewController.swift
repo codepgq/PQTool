@@ -87,6 +87,7 @@ class ViewController: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        
         var str = "sdfsadfsf(23333)fsldfjsdlkfjsdlksa(eeee)dfjlsdkfj"
         if let range = str.pq.findStart("sf\\(", end: "\\)").first {
             print(str.pq[range])

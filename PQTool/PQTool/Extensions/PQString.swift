@@ -79,27 +79,18 @@ public extension PQStringEncodable where WrapperType == String {
     var infoDictionary: [String:Any] {
         return Bundle.main.infoDictionary ?? [:]
     }
-    /// 获取当前版本号
-    ///
-    /// - Returns: 版本号
-    func version() -> String? {
+    
+    var appVersion: String? {
         return infoDictionary["CFBundleShortVersionString"] as? String
     }
     
-    /// 编译版本号
-    ///
-    /// - Returns: 编译版本号
-    func buildVersion() -> String? {
+    var appBuildVersion: String? {
         return infoDictionary["CFBundleVersion"] as? String
     }
     
-    /// app 名称
-    ///
-    /// - Returns: App 名称
-    func boundName() -> String? {
+    var appName: String? {
         return infoDictionary["CFBundleName"] as? String
     }
-    
     
     /// 正则
     ///
