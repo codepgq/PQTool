@@ -75,19 +75,30 @@ public extension PQStringEncodable where WrapperType == String {
         return path.appendingPathComponent((pq as NSString).lastPathComponent)
     }
     
+    /// Bundle.main.infoDictionary
+    var infoDictionary: [String:Any] {
+        return Bundle.main.infoDictionary ?? [:]
+    }
     /// 获取当前版本号
     ///
     /// - Returns: 版本号
-    func version() -> String?{
-        let info: [String:Any] = Bundle.main.infoDictionary ?? [:]
-        return info["CFBundleShortVersionString"] as? String
+    func version() -> String? {
+        return infoDictionary["CFBundleShortVersionString"] as? String
     }
     
-    func buildVersion() -> String?{
-        let info: [String:Any] = Bundle.main.infoDictionary ?? [:]
-        return info["CFBundleVersion"] as? String
+    /// 编译版本号
+    ///
+    /// - Returns: 编译版本号
+    func buildVersion() -> String? {
+        return infoDictionary["CFBundleVersion"] as? String
     }
     
+    /// app 名称
+    ///
+    /// - Returns: App 名称
+    func boundName() -> String? {
+        return infoDictionary["CFBundleName"] as? String
+    }
     
     
     /// 正则
