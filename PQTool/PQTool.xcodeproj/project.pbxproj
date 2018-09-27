@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60647818215CAC2B00C6FEFC /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60647817215CAC2B00C6FEFC /* RegisterController.swift */; };
 		607AA18020F3041B001EDB7C /* PQUpgradeVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AA17F20F3041A001EDB7C /* PQUpgradeVersion.swift */; };
 		608544D520A67BF300518BFC /* TestXIBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608544D320A67BF300518BFC /* TestXIBController.swift */; };
 		608544D620A67BF300518BFC /* TestXIBController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608544D420A67BF300518BFC /* TestXIBController.xib */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		60647817215CAC2B00C6FEFC /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		607AA17F20F3041A001EDB7C /* PQUpgradeVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQUpgradeVersion.swift; sourceTree = "<group>"; };
 		608544D320A67BF300518BFC /* TestXIBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXIBController.swift; sourceTree = "<group>"; };
 		608544D420A67BF300518BFC /* TestXIBController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestXIBController.xib; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				60D438ED20E3B63300A9DAFD /* close_window@3x.png */,
 				8F7D4F74209FFB360010190B /* AppDelegate.swift */,
 				8F7D4F76209FFB360010190B /* ViewController.swift */,
+				60647817215CAC2B00C6FEFC /* RegisterController.swift */,
 				8F7D4F78209FFB360010190B /* Main.storyboard */,
 				8F7D4F7B209FFB360010190B /* Assets.xcassets */,
 				8F7D4F7D209FFB360010190B /* LaunchScreen.storyboard */,
@@ -465,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60647818215CAC2B00C6FEFC /* RegisterController.swift in Sources */,
 				8F7D4F77209FFB360010190B /* ViewController.swift in Sources */,
 				608544D520A67BF300518BFC /* TestXIBController.swift in Sources */,
 				8F7D4F75209FFB360010190B /* AppDelegate.swift in Sources */,

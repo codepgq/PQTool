@@ -53,6 +53,11 @@ class ViewController: UIViewController {
         view.addSubview(tf)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardLayout()
+    }
+    
     private func newBtn(){
         let btn = PQButton()
         btn.setTitle("ddd", for: .normal)

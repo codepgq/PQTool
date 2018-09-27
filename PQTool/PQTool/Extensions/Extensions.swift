@@ -137,6 +137,10 @@ public extension UIViewController {
             [NSAttributedString.Key.foregroundColor: textColor]
     }
     
+    func removeKeyboardLayout() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
     func keyboardLayout(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWiiChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
@@ -146,7 +150,8 @@ public extension UIViewController {
         let keyboardFrame : CGRect = ((noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue)!
         
         //展示
-        let frame : CGRect = findFirstResponder(view)
+        let frame : CGRect = findFirstResponder(self.view)
+        self.pqResponderFrame = .zero
         if frame == .zero || keyboardFrame.minY == UIScreen.main.bounds.height{
             //回收
             UIView.animate(withDuration: 0.25, animations: {[weak self] in
@@ -165,11 +170,27 @@ public extension UIViewController {
         }
     }
     
+    private struct pqResponderFrameRT {
+        static var frame = "pqResponderFrameRT.frame"
+    }
+    private var pqResponderFrame: CGRect {
+        get {
+            let frame = objc_getAssociatedObject(self, &pqResponderFrameRT.frame) as? CGRect
+            return frame ?? .zero
+        }
+        set {
+            objc_setAssociatedObject(self, &pqResponderFrameRT.frame, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
     private func findFirstResponder(_ findView: UIView) -> CGRect{
-        var frame : CGRect = .zero
+        if pqResponderFrame != .zero {
+            return pqResponderFrame
+        }
         for view in findView.subviews {
-            if view.subviews.count > 0 {
-                frame = findFirstResponder(view)
+            if view.subviews.count > 0,
+                view.subviews.contains(where: { $0 is UITextView || $0 is UITextField }) {
+                pqResponderFrame = findFirstResponder(view)
             }
             if view.isFirstResponder {
                 if let superV = view.superview {
@@ -179,11 +200,10 @@ public extension UIViewController {
                     }
                 }
                 
-                frame = view.convert(view.frame, to: self.view)
-                return frame
+                pqResponderFrame = view.convert(view.frame, to: self.view)
             }
         }
-        return frame
+        return self.pqResponderFrame
     }
 }
 
