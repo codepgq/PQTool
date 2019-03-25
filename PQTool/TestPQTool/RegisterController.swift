@@ -17,28 +17,21 @@ class RegisterController: UIViewController {
         keyboardLayout()
     }
     
+    var tempView: UIView?
     func findFirstResponder(_ findView: UIView) -> CGRect{
-        // view btn tf view
         var frame : CGRect = .zero
         for view in findView.subviews {
             if view.subviews.count > 0,
                 view.subviews.contains(where: { $0 is UITextView || $0 is UITextField }){
-                print("digui")
                 frame = findFirstResponder(view)
             }
             if view.isFirstResponder {
-                if let superV = view.superview {
-                    //如果是view的一级子类，就不用转化坐标了
-                    if superV.isEqual(self.view) {
-                        return view.frame
-                    }
-                }
-                
-                frame = view.convert(view.frame, to: self.view)
-                print(frame)
-                return frame
+                tempView = view
+                break
             }
         }
+        guard let tempView = tempView else { return .zero }
+        frame = view.convert(tempView.frame, to: self.view)
         return frame
     }
     

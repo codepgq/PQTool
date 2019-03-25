@@ -34,8 +34,11 @@ import UIKit
     }
     
     public func pq_isiPhoneX() -> Bool {
-        let bounds = UIScreen.main.bounds
-        return (bounds.width == 375) && (bounds.height == 812)
+        var bottomInsets: CGFloat = 0
+        if #available(iOS 11.0, *) {
+            bottomInsets = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0
+        }
+        return bottomInsets > 0
     }
     
     @discardableResult public func dPrintData(_ item: Data?) -> Bool{

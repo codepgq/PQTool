@@ -46,11 +46,25 @@ class ViewController: UIViewController {
         btn.center = view.center
         view.addSubview(btn)
         
+        "".pq.appName
+        
+        print("ddddddd " ,String.pq.infoDictionary)
+        
         
         let tf = PQTextField(textColor: UIColor.red, placeholderColor: .orange, palceholder: "dfdfd", leftMargin: 14)
         tf.frame = CGRect(x: 0, y: 300, width: 100, height: 40)
         tf.backgroundColor = .white
         view.addSubview(tf)
+        
+        
+        let str = "mocca(eyJtb2RlIjotMSwiZHN0IjoyLCJzbiI6MX0=)"
+        if let range = str.pq.findStart("mocca\\(", end: "\\)").first {
+            print(range)
+            print(str.pq[range]!)
+        }
+        
+       PQHUD.jumpToMyAppSet()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -55,7 +55,9 @@ public enum PQPushType: String {
 
 public class PQHUD: NSObject {
     
-    public static let share: PQHUD = PQHUD()
+    public typealias PushCallbackClosure = (Error?) -> Void
+    
+    public static let shared: PQHUD = PQHUD()
     public static var dismissTimeInterval: TimeInterval = 0.75
     
     #if false
@@ -77,21 +79,26 @@ public class PQHUD: NSObject {
     
     #endif
     
-    class func push(_ string: String){
-        let url = URL(string: string)
-        if UIApplication.shared.canOpenURL(url!) {
+    class func push(_ string: String, completion: PushCallbackClosure? = nil){
+        var error: Error? = nil
+        defer { completion?(error) }
+        guard let url = URL(string: string) else {
+            error = NSError(domain: "Invalid string", code: NSCoderValueNotFoundError, userInfo: ["msg": "Can not convert url: \(string)"])
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
             if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
-                UIApplication.shared.openURL(url!)
+                UIApplication.shared.openURL(url)
             }
         }
     }
     
     
     
-    public class func jumpToMyAppSet(){
-        push(UIApplication.openSettingsURLString)
+    public class func jumpToMyAppSet(_ completion: PushCallbackClosure? = nil){
+        push(UIApplication.openSettingsURLString, completion: completion)
     }
     
     public class func defaultSetHUD(_ block: (() -> ())?){
