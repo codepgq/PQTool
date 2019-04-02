@@ -248,19 +248,19 @@ public extension PQStringEncodable where WrapperType == String {
 // MARK: - class property
 public extension PQStringEncodable where WrapperType == String {
     /// Bundle.main.infoDictionary
-    public var infoDictionary: [String:Any] {
+    var infoDictionary: [String:Any] {
         return Bundle.main.infoDictionary ?? [:]
     }
     
-    public var appVersion: String? {
+    var appVersion: String? {
         return infoDictionary["CFBundleShortVersionString"] as? String
     }
     
-    public var appBuildVersion: String? {
+    var appBuildVersion: String? {
         return infoDictionary["CFBundleVersion"] as? String
     }
     
-    public var appName: String? {
+    var appName: String? {
         return infoDictionary["CFBundleName"] as? String
     }
 }

@@ -163,7 +163,7 @@ public extension NavigationItemProtocol {
 
 public extension UINavigationController {
     
-    public func showLine(_ show: Bool = true){
+    func showLine(_ show: Bool = true){
         findBotomLineUnder(navigationBar)?.isHidden = !show
     }
     

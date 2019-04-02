@@ -76,7 +76,7 @@ public extension PQColorEncodable where WrapperType == UIColor {
         return UInt8(saturation() * 255)
     }
     func brightnessUInt8() -> UInt8 {
-        return UInt8(brightnessUInt8() * 255)
+        return UInt8(brightness() * 255)
     }
     
     func rgbUInt8() -> [UInt8] {
@@ -160,7 +160,7 @@ public struct ExtensionPQColorEncodable<T>: PQColorEncodable{
 // UIColor.red.pq.
 
 public extension UIColor {
-    public var pq: ExtensionPQColorEncodable<UIColor> {
+    var pq: ExtensionPQColorEncodable<UIColor> {
         return ExtensionPQColorEncodable(pq: self)
     }
 }
