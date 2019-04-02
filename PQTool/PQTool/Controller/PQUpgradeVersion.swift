@@ -10,7 +10,7 @@ import UIKit
 
 open class PQUpgradeVersion: NSObject {
     ///  #appId
-    open static var myAppId: String?
+    public static var myAppId: String?
     
     /// title, message, cancel, ignore, upgrade
     public typealias NewVersion = (title: String?, message: String?, cancel: String?, ignore: String?, upgrade: String?)
